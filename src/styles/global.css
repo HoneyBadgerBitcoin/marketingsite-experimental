@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Fjalla+One&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gulams Condensed Font Face Definitions */
+@font-face {
+  font-family: "Gulams Condensed";
+  src: url("/fonts/GulamsCondensed-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gulams Condensed";
+  src: url("/fonts/GulamsCondensed-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gulams Condensed";
+  src: url("/fonts/GulamsCondensed-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gulams Condensed";
+  src: url("/fonts/GulamsCondensed-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Balinese Culture Font Face Definition */
+@font-face {
+  font-family: "Balinese Culture";
+  src: url("/fonts/BalineseCulture.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed Neue Soft Font */
+@font-face {
+  font-family: "Condensed Neue Soft";
+  src: url("/fonts/CondensedNeueSoft.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Dacht Font */
+@font-face {
+  font-family: "Dacht";
+  src: url("/fonts/Dacht.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Falgard Font Family */
+@font-face {
+  font-family: "Falgard";
+  src: url("/fonts/Falgard.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Falgard";
+  src: url("/fonts/Falgard-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gendar Font Family */
+@font-face {
+  font-family: "Gendar";
+  src: url("/fonts/Gendar-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gendar";
+  src: url("/fonts/Gendar-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gendar";
+  src: url("/fonts/Gendar-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gendar";
+  src: url("/fonts/Gendar-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gendar";
+  src: url("/fonts/Gendar-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gendar";
+  src: url("/fonts/Gendar-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gendar";
+  src: url("/fonts/Gendar-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Granika Font */
+@font-face {
+  font-family: "Granika";
+  src: url("/fonts/Granika.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Marvelous Font Family */
+@font-face {
+  font-family: "Marvelous";
+  src: url("/fonts/Marvelous Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marvelous";
+  src: url("/fonts/Marvelous Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marvelous";
+  src: url("/fonts/Marvelous Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marvelous";
+  src: url("/fonts/Marvelous Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marvelous";
+  src: url("/fonts/Marvelous Semi Bold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Marvelous";
+  src: url("/fonts/Marvelous Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Neohead Font */
+@font-face {
+  font-family: "Neohead";
+  src: url("/fonts/Neohead.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bondia Condensed Font Family */
+@font-face {
+  font-family: "Bondia";
+  src: url("/fonts/Bondia-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SF Pro Display Font Family */
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bondia";
+  src: url("/fonts/Bondia-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bondia";
+  src: url("/fonts/Bondia-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bondia";
+  src: url("/fonts/Bondia-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bondia";
+  src: url("/fonts/Bondia-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bondia";
+  src: url("/fonts/Bondia-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bondia";
+  src: url("/fonts/Bondia-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased font-body;
+  }
+
+  h1 {
+    @apply font-heading font-medium;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-medium;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-accent-600 text-white hover:bg-accent-700 transition-colors duration-200 font-semibold shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-dark-accent-600 text-white hover:bg-dark-accent-700 transition-colors duration-200 font-semibold shadow-sm;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border border-gray-300 text-gray-800 hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200 font-medium;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
+
+  /* Sharp pill CTA */
+  .btn-pill {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-accent-600 text-white hover:bg-accent-700 transition-colors duration-200 font-medium shadow-sm;
+  }
+
+  /* Sharp corporate buttons */
+  .btn-pill-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-accent-600 text-white hover:bg-accent-700 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+
+  .btn-pill-outline {
+    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-medium;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.01] hover:shadow-card-hover;
+  }
+
+  /* Shadows */
+  .shadow-card { box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08); }
+  .shadow-card-hover { box-shadow: 0 16px 40px rgba(16, 24, 40, 0.12); }
+
+  /* Gradients */
+  .bg-gradient-primary { background-image: linear-gradient(135deg, #024eb3 0%, #023f95 100%); }
+  .bg-gradient-secondary { background-image: linear-gradient(135deg, #6ba6ff 0%, #3d7fff 100%); }
+  .bg-gradient-accent { background-image: linear-gradient(135deg, #024eb3 0%, #023377 100%); }
+  .bg-gradient-dark { background-image: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.2) 100%); }
+
+  /* Professional hero background */
+  .bg-ripple-hero {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(2,78,179,0.04) 0%, transparent 60%),
+      radial-gradient(1000px 500px at -20% 40%, rgba(15,23,42,0.02) 0%, transparent 60%),
+      #ffffff;
+  }
+
+  /* Sharp Corporate Cards */
+  .card-modern {
+    @apply bg-white shadow-card p-8 transition-all duration-300
+           hover:shadow-card-hover hover:-translate-y-2;
+  }
+  
+  .card-gradient {
+    @apply p-8 text-white shadow-xl transition-all duration-300
+           hover:shadow-2xl hover:-translate-y-2;
+  }
+  
+  .card-colored {
+    @apply p-8 shadow-lg transition-all duration-300
+           hover:shadow-xl hover:-translate-y-2;
+  }
+
+  /* Gradient Text */
+  .text-gradient-primary {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-secondary {
+    @apply bg-gradient-secondary bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #024eb3 0%, #3d7fff 40%, #024eb3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+
+  /* Badge/Pills */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+  
+  .badge-success {
+    @apply badge bg-success-100 text-success-700;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+
+  /* Input Fields */
+  .input-modern {
+    @apply w-full px-6 py-4 bg-gray-50 border border-gray-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-300;
+  }
+
+  /* Glass effect for dark sections */
+  .glass-dark {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+  
+  /* Professional section backgrounds */
+  .section-sand {
+    @apply bg-white;
+  }
+  
+  .section-mint {
+    @apply bg-gray-50;
+  }
+  
+  .section-blue {
+    @apply bg-slate-50;
+  }
+  
+  .section-purple {
+    @apply bg-white;
+  }
+  
+  .section-neutral {
+    @apply bg-gray-50;
+  }
+  
+  .section-dark {
+    @apply bg-slate-900 text-white;
+  }
+  
+  .section-corporate {
+    @apply bg-gradient-to-b from-slate-50 to-white;
+  }
+  
+  /* Modern section spacing */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+}
+
+@layer utilities {
+  /* Clean, minimal utilities only */
+}
+
+/* Clean, minimal keyframes only */
+
+/* Liquid Glass Effect Animations */
+@keyframes liquid-shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+@keyframes liquid-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+.mask-badger {
+  -webkit-mask-image: radial-gradient(circle at 50% 60%, black 40%, transparent 70%);
+  mask-image: radial-gradient(circle at 50% 60%, black 40%, transparent 70%);
+}

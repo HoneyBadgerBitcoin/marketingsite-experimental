@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.tsx';
+import ATMShowcase from '../components/ATMShowcase.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Find a HoneyBadger ATM Near You - HoneyBadger">
+  <div class="min-h-screen bg-white">
+    <Header client:load />
+    <main>
+      <!-- Hero section -->
+      <div class="pt-32 pb-12 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container-custom">
+          <div class="text-center">
+            <h1 class="text-4xl md:text-6xl text-gray-900 mb-6">
+              Find a Bitcoin ATM Near You
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Access our network of 200+ Bitcoin ATMs across Canada. Buy and sell crypto with cash at convenient locations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ATM Showcase Component -->
+      <ATMShowcase />
+      
+      <!-- Additional CTA Section -->
+      <section class="py-20 bg-gray-50">
+        <div class="container-custom text-center">
+          <h2 class="text-3xl md:text-4xl text-gray-900 mb-6">
+            Can't find an ATM near you?
+          </h2>
+          <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            We're constantly expanding our network. In the meantime, you can buy crypto online or get personalized assistance.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/" class="btn-primary">
+              Buy Online Instead →
+            </a>
+            <a href="/#guided-purchase" class="px-6 py-3 border border-gray-300 text-gray-800 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200 font-medium">
+              Get Guided Help
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

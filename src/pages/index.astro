@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.tsx';
+import Hero from '../components/Hero.astro';
+import Testimonials from '../components/Testimonials.astro';
+import TabServices from '../components/TabServices.tsx';
+import Stats from '../components/Stats.tsx';
+import Support from '../components/Support.astro';
+import Insights from '../components/Insights.astro';
+import NewsletterCTA from '../components/NewsletterCTA.astro';
+import FAQ from '../components/FAQ.tsx';
+import CTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="HoneyBadger - Buy and Sell Crypto with Cash">
+  <div class="min-h-screen bg-white">
+    <Header client:load />
+    <main>
+    <Hero />
+      <!-- Stats Section - Professional grey background -->
+      <section class="section-blue section-padding-sm">
+        <Stats client:load />
+      </section>
+      
+      <!-- Services Section - Clean white background -->
+      <section class="bg-white">
+        <TabServices client:load />
+      </section>
+      
+      <!-- Support Section - Professional slate background -->
+      <section class="section-blue section-padding">
+        <Support />
+      </section>
+      
+      <!-- Testimonials Section - Custom warm background -->
+      <section class="section-padding" style="background-color: #f1f1e6;">
+        <Testimonials />
+      </section>
+      
+      <!-- Insights - Professional gray background -->
+      <section class="section-mint section-padding">
+        <Insights />
+      </section>
+    </main>
+    
+    <!-- Full-width Newsletter CTA Section -->
+    <NewsletterCTA />
+    
+    <main>
+      <!-- FAQ - Professional gray background -->
+      <section class="section-neutral section-padding">
+        <FAQ client:load />
+      </section>
+    </main>
+    
+    <!-- Full-width Final CTA Section -->
+    <CTA />
+    
+    <Footer />
+  </div>
+</BaseLayout>

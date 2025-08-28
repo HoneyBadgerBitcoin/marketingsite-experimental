@@ -1,0 +1,132 @@
+---
+import VideoPlayer from "./VideoPlayer.astro";
+
+const cryptoLogos = {
+  BTC: "₿",
+  ETH: "Ξ",
+  LTC: "Ł",
+  XRP: "✕",
+  USDT: "₮",
+  DOGE: "Ð"
+};
+
+const cryptos = [
+  { name: "Bitcoin", symbol: "BTC", price: "$68,743.45", change: "+2.4%", color: "orange" },
+  { name: "Ethereum", symbol: "ETH", price: "$3,641.15", change: "+1.8%", color: "purple" },
+  { name: "Litecoin", symbol: "LTC", price: "$85.00", change: "+3.2%", color: "gray" },
+  { name: "Ripple", symbol: "XRP", price: "$0.52", change: "-0.5%", color: "blue" },
+  { name: "Tether", symbol: "USDT", price: "$1.00", change: "0.0%", color: "green" },
+  { name: "Dogecoin", symbol: "DOGE", price: "$0.15", change: "+5.1%", color: "yellow" },
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl text-gray-900 mb-4">
+        One Platform, Millions of Assets
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        As a leading self-custody crypto platform, we support millions of assets across 100+
+        blockchains. From Bitcoin, Ethereum, and Solana, to Cosmos, Optimism, and much more.
+      </p>
+    </div>
+
+    <!-- Crypto selection cards -->
+    <div class="bg-gradient-accent rounded-3xl p-10 max-w-6xl mx-auto">
+      <div class="text-center text-white mb-10">
+        <h3 class="text-3xl mb-2">Massive selection of</h3>
+        <h3 class="text-3xl">70+ cryptocurrencies.</h3>
+      </div>
+      
+      <!-- Crypto icons row -->
+      <div class="flex flex-wrap justify-center gap-6 mb-10">
+        {cryptos.map((crypto) => (
+          <div class="group cursor-pointer">
+            <div class={`
+              w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold
+              transition-all duration-300 transform hover:scale-110 hover:rotate-3
+              ${
+                crypto.color === "orange" ? "bg-orange-400 text-white" :
+                crypto.color === "purple" ? "bg-purple-400 text-white" :
+                crypto.color === "gray" ? "bg-gray-400 text-white" :
+                crypto.color === "blue" ? "bg-blue-400 text-white" :
+                crypto.color === "green" ? "bg-green-400 text-white" :
+                "bg-yellow-400 text-gray-900"
+              }
+            `}>
+              {cryptoLogos[crypto.symbol]}
+            </div>
+            <p class="text-white text-sm font-medium text-center mt-2">{crypto.symbol}</p>
+            <p class="text-white/60 text-xs text-center">{crypto.price}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center">
+        <span class="text-white/80 text-lg">Join 60,000+ Canadians</span>
+        <span class="text-white/80 text-lg"> already using HoneyBadger</span>
+        <div class="mt-6">
+          <button class="bg-white text-accent-600 px-8 py-4 rounded-xl text-lg hover:bg-white/90 transition-all">
+            View More →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trading platform showcase -->
+    <div class="mt-20 grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      <div>
+        <h3 class="text-3xl text-gray-900 mb-6">
+          Easy crypto trading<br/>for Canadians.
+        </h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Competitive trading fees of 0.15%-0.25%</h4>
+              <p class="text-gray-600">Industry-leading rates for Canadian traders</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Trade securely on your desktop or mobile</h4>
+              <p class="text-gray-600">Full access on all your devices</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center flex-shrink-0 mt-1">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Fast & instant customer support that our customers love</h4>
+              <p class="text-gray-600">24/7 Canadian support team</p>
+            </div>
+          </div>
+        </div>
+        <button class="mt-8 btn-primary">
+          Get Started →
+        </button>
+      </div>
+      
+      <div class="relative">
+        <VideoPlayer 
+          src="/crypto-hero.webm" 
+          alt="Honey Badger with Bitcoin animated video" 
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+  </div>
+</section>

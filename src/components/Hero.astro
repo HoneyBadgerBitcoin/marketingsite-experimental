@@ -1,0 +1,106 @@
+---
+import VideoPlayer from "./VideoPlayer.astro";
+// Hero component - no server-side logic needed
+---
+
+<section class="relative pt-40 pb-20 md:pt-48 md:pb-28 lg:pt-56 lg:pb-32 overflow-hidden bg-white min-h-screen flex items-center">
+  <div class="container-custom relative">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <!-- Left Content -->
+      <div class="relative z-20 lg:pr-8 hero-content">
+        <h1 class="text-4xl md:text-5xl lg:text-[5rem] font-normal tracking-tight text-gray-900 mb-8 leading-tight text-left">
+          Buy Bitcoin in <span class="text-gradient-accent font-medium">Minutes</span>, Not Hours
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl leading-relaxed text-left">
+          Canada's trusted platform for digital assets — simple, secure, and fast.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-start">
+          <a href="#app" class="btn-pill-primary">
+            Buy Online
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#find-atm" class="btn-pill-outline">Find an ATM</a>
+        </div>
+      </div>
+      
+      <!-- Right Content - Coin Rain Video -->
+      <div class="relative hidden lg:block hero-image">
+        <!-- Coin rain video container -->
+        <div class="relative w-full h-[600px] flex items-center justify-center">
+          <VideoPlayer 
+            src="/crypto-hero-rolling.webm" 
+            alt="Bitcoin coins falling from sky animated video" 
+            class="w-full h-full drop-shadow-xl"
+            style="filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-content {
+    animation: fadeInLeft 0.6s ease-out;
+  }
+  
+  .hero-image {
+    animation: fadeInRight 0.6s ease-out 0.2s both;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float-delayed 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+  
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-from), var(--tw-gradient-to));
+  }
+</style>

@@ -1,0 +1,89 @@
+---
+import { Twitter, Linkedin, Github, Mail, Phone, MapPin } from 'lucide-react';
+
+const footerLinks = {
+  Product: ['Buy Bitcoin', 'Sell Bitcoin', 'ATM Locations', 'Business Solutions'],
+  Company: ['About Us', 'Blog', 'Careers', 'Press'],
+  Support: ['Help Center', 'Contact Us', 'FAQ', 'Security'],
+  Legal: ['Terms & Conditions', 'Privacy Policy', 'Compliance', 'FINTRAC'],
+};
+---
+
+<footer class="bg-[#141a1f] text-gray-200 py-20 md:py-24">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 md:gap-16">
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="mb-4">
+          <img 
+            src="/logo-white.png" 
+            alt="HoneyBadger" 
+            class="h-12 w-auto"
+          />
+        </div>
+        <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+          Canada's trusted platform for buying and selling digital assets. Join over 60,000+ satisfied customers. 🍁
+        </p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <Twitter className="h-5 w-5" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <Github className="h-5 w-5" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      {Object.entries(footerLinks).map(([category, links]) => (
+        <div key={category}>
+          <h3 class="font-semibold mb-4 text-white">{category}</h3>
+          <ul class="space-y-2">
+            {links.map((link) => (
+              <li key={link}>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Contact Info -->
+    <div class="mt-16 md:mt-20 pt-12 border-t border-gray-800">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="flex items-center space-x-3">
+          <Mail className="h-5 w-5 text-accent-400" />
+          <a href="mailto:support@badgercoin.com" class="text-gray-300 hover:text-white transition-colors">
+            support@badgercoin.com
+          </a>
+        </div>
+        <div class="flex items-center space-x-3">
+          <Phone className="h-5 w-5 text-accent-400" />
+          <span class="text-gray-300">1-855-499-1149</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <MapPin className="h-5 w-5 text-accent-400" />
+          <span class="text-gray-300">Vancouver, BC</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">
+          © 2024 HoneyBadger Enterprises Ltd. All rights reserved.
+        </p>
+        <p class="text-gray-400 text-sm mt-4 md:mt-0">
+          FINTRAC #M20958584 | Revenu Québec #1225131500
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
