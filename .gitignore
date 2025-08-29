@@ -104,3 +104,41 @@ Thumbs.db
 # Logs
 logs
 *.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Lock files (keep package-lock.json but ignore others)
+yarn.lock
+pnpm-lock.yaml
+
+# Build artifacts
+build/
+out/
+
+# Vercel
+.vercel
+
+# Local development
+.env.*.local
+
+# Editor directories and files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+
+# Backup files
+*.bak
+*.backup
+
+# Testing
+.nyc_output/
+coverage.json
+jest_*
+
+# Miscellaneous
+*.tgz
+*.tar.gz
