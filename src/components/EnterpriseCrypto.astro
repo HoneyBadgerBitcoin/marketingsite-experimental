@@ -11,58 +11,49 @@ const features = [
 ];
 ---
 
-<section class="py-24">
-  <div class="container-custom">
-    <!-- Gradient panel -->
-    <div class="relative rounded-3xl overflow-hidden">
-      <!-- Background gradients using brand blues/purples -->
-      <div class="absolute inset-0 bg-[#0a1320]"></div>
-      <div class="absolute inset-0" style="background: radial-gradient(900px 500px at 20% 80%, rgba(2,78,179,0.35), transparent 60%), radial-gradient(800px 420px at 90% 30%, rgba(61,127,255,0.35), transparent 60%), radial-gradient(1200px 600px at 50% 0%, rgba(2,51,119,0.35), transparent 70%);"></div>
-
-      <!-- Content -->
-      <div class="relative px-6 sm:px-10 lg:px-16 py-12 lg:py-20">
-        <!-- Title Section -->
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-medium text-white mb-4 leading-tight">
-            Built for
-            <span class="bg-gradient-to-r from-[#7fa1ff] via-white to-[#7fa1ff] bg-clip-text text-transparent">crypto at scale</span>
-          </h2>
-          <p class="text-white/80 max-w-2xl mx-auto">
-            From high‑volume ATMs to institutional OTC, HoneyBadger delivers the
-            reliability, security, and compliance required to operate crypto infrastructure
-            at national scale.
-          </p>
-        </div>
-        
-        <!-- Features Grid - 3x2 layout -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {features.map((f, index) => (
-            <div 
-              class="tilt-card rounded-2xl bg-white/6 hover:bg-white/10 border border-white/10 backdrop-blur-sm p-8 text-white transition-all duration-300 min-h-[280px] flex flex-col"
-              data-tilt
-              data-tilt-max="15"
-              data-tilt-speed="400"
-              data-tilt-perspective="1000"
-              style="transform-style: preserve-3d;"
-            >
-              <div class="flex flex-col gap-6 h-full" style="transform: translateZ(20px);">
-                <div class="flex items-start gap-4">
-                  <div class="p-3 rounded-xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm flex-shrink-0">
-                    <f.icon className="w-7 h-7 text-[#7fa1ff]" />
-                  </div>
-                  <h3 class="font-bold text-white text-xl">{f.title}</h3>
-                </div>
-                <div class="flex-1">
-                  <p class="text-base text-white/80 leading-relaxed">{f.text}</p>
-                </div>
+<section class="min-h-screen flex items-center py-16 relative overflow-hidden">
+  <!-- Background gradients using brand blues/purples -->
+  <div class="absolute inset-0 bg-[#0a1320]"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(900px 500px at 20% 80%, rgba(2,78,179,0.35), transparent 60%), radial-gradient(800px 420px at 90% 30%, rgba(61,127,255,0.35), transparent 60%), radial-gradient(1200px 600px at 50% 0%, rgba(2,51,119,0.35), transparent 70%);"></div>
+  
+  <div class="container-custom relative w-full">
+    <!-- Title Section -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-medium text-white mb-4 leading-tight">
+        Built for
+        <span class="bg-gradient-to-r from-[#7fa1ff] via-white to-[#7fa1ff] bg-clip-text text-transparent">crypto at scale</span>
+      </h2>
+      <p class="text-white/80 max-w-2xl mx-auto">
+        From high‑volume ATMs to institutional OTC, HoneyBadger delivers the
+        reliability, security, and compliance required to operate crypto infrastructure
+        at national scale.
+      </p>
+    </div>
+    
+    <!-- Features Grid - 3x2 layout -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {features.map((f, index) => (
+        <div 
+          class="tilt-card rounded-2xl bg-white/6 hover:bg-white/10 border border-white/10 backdrop-blur-sm p-8 text-white transition-all duration-300 min-h-[280px] flex flex-col"
+          data-tilt
+          data-tilt-max="15"
+          data-tilt-speed="400"
+          data-tilt-perspective="1000"
+          style="transform-style: preserve-3d;"
+        >
+          <div class="flex flex-col gap-6 h-full" style="transform: translateZ(20px);">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-xl bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm flex-shrink-0">
+                <f.icon className="w-7 h-7 text-[#7fa1ff]" />
               </div>
+              <h3 class="font-bold text-white text-xl">{f.title}</h3>
             </div>
-          ))}
+            <div class="flex-1">
+              <p class="text-base text-white/80 leading-relaxed">{f.text}</p>
+            </div>
+          </div>
         </div>
-
-        <!-- Bottom rounded shadow edge -->
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/30 to-transparent"></div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
