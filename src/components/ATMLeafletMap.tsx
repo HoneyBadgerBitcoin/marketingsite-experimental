@@ -235,7 +235,7 @@ export default function ATMLeafletMap() {
         <div className="space-y-2">
           <div>
             <p className="text-xs text-gray-500 uppercase tracking-wider">Network</p>
-            <p className="text-xl font-semibold text-gray-900">220+ ATMs</p>
+            <p className="text-xl font-semibold text-gray-900">230+ ATMs</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1">

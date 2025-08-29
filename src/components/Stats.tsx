@@ -11,7 +11,7 @@ const Stats = () => {
 
   const stats = [
     { value: 60000, suffix: '+', label: 'Verified Users' },
-    { value: 220, suffix: '+', label: 'ATMs Across Canada' },
+    { value: 230, suffix: '+', label: 'ATMs Across Canada' },
     { value: 24, suffix: 'M', label: 'Quarterly Volume', prefix: '$' },
     { value: 99.9, suffix: '%', label: 'Uptime' },
   ];

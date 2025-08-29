@@ -75,7 +75,9 @@ const buyItems = [
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/logo-white.png" alt="HoneyBadger" className="h-11 w-auto" />
+            <a href="/" className="flex items-center">
+              <img src="/logo-white.png" alt="HoneyBadger" className="h-11 w-auto" />
+            </a>
           </div>
 
           {/* Desktop Navigation */}

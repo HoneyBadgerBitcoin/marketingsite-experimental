@@ -41,7 +41,7 @@ const tabContents: TabContent[] = [
     heading: 'Find a Bitcoin ATM Near You',
     description: 'Access our network of Bitcoin ATMs across Canada. Buy and sell crypto with cash at convenient locations near you.',
     features: [
-      '200+ ATM locations nationwide',
+      '230+ ATM locations nationwide',
       'Buy with cash instantly',
       'No KYC for transactions under $1000'
     ],
