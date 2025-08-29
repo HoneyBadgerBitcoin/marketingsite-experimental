@@ -288,6 +288,42 @@
 }
 
 @layer base {
+  /* Add subtle rounded corners to specific elements for a softer look */
+  div, article, aside,
+  button, input, textarea, select,
+  img, video, canvas, iframe,
+  table, th, td,
+  ul, ol, li,
+  blockquote, pre, code,
+  form, fieldset, legend {
+    border-radius: 0.25rem; /* 4px - subtle rounding */
+  }
+  
+  /* Keep header, nav, section, main, footer, and dropdowns sharp for professional look */
+  header, nav, section, main, footer,
+  [class*="dropdown"], [class*="mega"], [class*="menu"] {
+    border-radius: 0 !important;
+  }
+  
+  /* Reset border-radius for elements that should remain sharp */
+  html, body, svg, path, 
+  p, h1, h2, h3, h4, h5, h6,
+  ::before, ::after {
+    border-radius: 0 !important;
+  }
+  
+  /* Allow spans used as badges/pills to have rounded corners */
+  span[class*="bg-"], span[class*="badge"], span[class*="pill"] {
+    border-radius: 0.25rem !important;
+  }
+  
+  /* Allow links styled as buttons to have rounded corners */
+  a.btn-primary, a.btn-secondary, a.btn-outline, 
+  a.btn-pill, a.btn-pill-primary, a.btn-pill-outline,
+  a[class*="btn-"], a[class*="button"] {
+    border-radius: 0.25rem !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -469,6 +505,12 @@
 
 @layer utilities {
   /* Clean, minimal utilities only */
+  
+  /* Ensure tab navigation buttons and their borders remain straight */
+  .inline-flex.border-b-2 button,
+  button[class*="border-b-2"] {
+    border-radius: 0 !important;
+  }
 }
 
 /* Clean, minimal keyframes only */

@@ -38,7 +38,7 @@ const Stats = () => {
               className="text-center"
             >
               <motion.div 
-                className="text-4xl md:text-5xl font-medium text-accent-600"
+                className="text-4xl md:text-5xl font-medium text-white"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ 
@@ -51,7 +51,7 @@ const Stats = () => {
                 {stat.suffix}
               </motion.div>
               <motion.p 
-                className="mt-3 text-gray-600 text-base"
+                className="mt-3 text-white/80 text-base"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ 

@@ -1,0 +1,85 @@
+---
+import { Shield, Lock, Globe, Server, Cpu, BadgeCheck, Building2, Database, KeyRound, Rocket } from 'lucide-react';
+
+const features = [
+  { icon: Shield, title: 'Enterprise security', text: 'PCI-level controls, encrypted wallet ops, fraud detection' },
+  { icon: Globe, title: 'Nationwide coverage', text: '200+ ATMs across Canada with real‑time uptime monitoring' },
+  { icon: BadgeCheck, title: 'Regulatory ready', text: 'Compliant flows and reporting for FINTRAC, AML' },
+  { icon: Lock, title: 'SOC 2 practices', text: 'Hardened access, audit logs, least privilege (RBAC)' },
+  { icon: Server, title: 'Multi‑region infra', text: 'Redundant providers and automatic failover' },
+  { icon: Database, title: 'Immutable receipts', text: 'Tamper‑evident transaction archive for audits' },
+  { icon: Cpu, title: 'Smart pricing', text: 'Dynamic spreads and fees powered by live liquidity' },
+  { icon: Building2, title: 'White‑label ready', text: 'Partner & franchise programs with custom branding' },
+  { icon: KeyRound, title: 'Custody‑agnostic', text: 'Support for self‑custody or managed wallets' },
+  { icon: Rocket, title: '24/7 success', text: 'Dedicated support and SLAs for mission‑critical ops' },
+];
+---
+
+<section class="py-24">
+  <div class="container-custom">
+    <!-- Gradient panel -->
+    <div class="relative rounded-3xl overflow-hidden">
+      <!-- Background gradients using brand blues/purples -->
+      <div class="absolute inset-0 bg-[#0a1320]"></div>
+      <div class="absolute inset-0" style="background: radial-gradient(900px 500px at 20% 80%, rgba(2,78,179,0.35), transparent 60%), radial-gradient(800px 420px at 90% 30%, rgba(61,127,255,0.35), transparent 60%), radial-gradient(1200px 600px at 50% 0%, rgba(2,51,119,0.35), transparent 70%);"></div>
+
+      <!-- Content -->
+      <div class="relative px-6 sm:px-10 lg:px-16 py-12 lg:py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <!-- Left side with title and some cards -->
+          <div class="space-y-8">
+            <div>
+              <h2 class="text-4xl md:text-5xl font-medium text-white mb-4 leading-tight">
+                Built for
+                <span class="bg-gradient-to-r from-[#7fa1ff] via-white to-[#7fa1ff] bg-clip-text text-transparent">crypto at scale</span>
+              </h2>
+              <p class="text-white/80 max-w-md">
+                From high‑volume ATMs to institutional OTC, HoneyBadger delivers the
+                reliability, security, and compliance required to operate crypto infrastructure
+                at national scale.
+              </p>
+            </div>
+            
+            <!-- Left side cards (first 4 features) -->
+            <div class="grid gap-4">
+              {features.slice(0, 4).map((f) => (
+                <div class="rounded-2xl bg-white/6 hover:bg-white/10 border border-white/10 backdrop-blur-sm p-5 text-white transition-colors">
+                  <div class="flex items-start gap-3">
+                    <div class="p-2 rounded-xl bg-white/10">
+                      <f.icon className="w-5 h-5 text-[#7fa1ff]" />
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-white mb-1">{f.title}</h3>
+                      <p class="text-sm text-white/70 leading-relaxed">{f.text}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Right side cards (remaining 6 features) -->
+          <div class="grid md:grid-cols-2 gap-4 lg:pt-16">
+            {features.slice(4).map((f) => (
+              <div class="rounded-2xl bg-white/6 hover:bg-white/10 border border-white/10 backdrop-blur-sm p-5 text-white transition-colors">
+                <div class="flex items-start gap-3">
+                  <div class="p-2 rounded-xl bg-white/10">
+                    <f.icon className="w-5 h-5 text-[#7fa1ff]" />
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-white mb-1">{f.title}</h3>
+                    <p class="text-sm text-white/70 leading-relaxed">{f.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Bottom rounded shadow edge -->
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/30 to-transparent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+

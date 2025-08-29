@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ATMMapWrapper from './ATMMapWrapper';
 
 interface TabContent {
   id: string;
@@ -9,7 +10,7 @@ interface TabContent {
   ctaText: string;
   highlights?: string[];
   media: {
-    type: 'image' | 'video';
+    type: 'image' | 'video' | 'map';
     src: string;
     alt?: string;
   };
@@ -30,7 +31,7 @@ const tabContents: TabContent[] = [
     ctaText: 'Start Buying Online',
     media: {
       type: 'image',
-      src: '/business-4.png',
+      src: '/business-1.png',
       alt: 'Online crypto trading platform'
     }
   },
@@ -178,7 +179,9 @@ export default function TabServices() {
                 {/* Media Content */}
                 <div className="relative self-start">
                   <div className="h-[520px] md:h-[560px] overflow-hidden shadow-xl">
-                    {content.media.type === 'video' ? (
+                    {content.media.type === 'map' ? (
+                      <ATMMapWrapper />
+                    ) : content.media.type === 'video' ? (
                       <video
                         src={content.media.src}
                         autoPlay

@@ -50,6 +50,10 @@ const testimonials = [
   }
 ];
 
+// Duplicate testimonials to create seamless marquee effect
+const rowOne = [...testimonials, ...testimonials, ...testimonials];
+const rowTwo = [...testimonials, ...testimonials, ...testimonials];
+
 const getSourceIcon = (source) => {
   switch(source) {
     case 'google-play':
@@ -75,56 +79,96 @@ const getSourceIcon = (source) => {
 
 <section class="py-20">
   <div class="container-custom">
-    <div class="text-center mb-16">
+    <div class="text-center mb-12">
       <h2 class="text-5xl text-gray-900 mb-4">
         Love from our users
       </h2>
     </div>
 
-    <!-- Testimonials Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-      {testimonials.map((testimonial) => (
-        <div class="bg-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100">
-          <!-- Review Text -->
-          <p class="text-gray-700 text-sm leading-relaxed mb-6 line-clamp-4">
-            {testimonial.text}
-          </p>
-          
-          <!-- Author Info -->
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-              <img 
-                src={testimonial.avatar}
-                alt={testimonial.author}
-                class="w-10 h-10"
-              />
-              <div>
-                <p class="font-semibold text-gray-900 text-sm">{testimonial.author}</p>
-                <p class="text-gray-500 text-xs">{testimonial.source}</p>
+    <!-- Row 1 - scroll left -->
+    <div class="relative overflow-hidden mb-4">
+      <div class="flex gap-6 items-stretch animate-marquee-left will-change-transform">
+        {rowOne.map((testimonial, idx) => (
+          <div class="bg-white p-8 transition-all duration-300 border border-gray-200 rounded-2xl w-[360px] min-h-[280px] flex flex-col justify-between flex-shrink-0 hover:border-gray-300">
+            <p class="text-gray-700 text-base leading-relaxed mb-8 line-clamp-5 flex-grow">
+              {testimonial.text}
+            </p>
+            <div class="flex items-center justify-between mt-auto">
+              <div class="flex items-center space-x-3">
+                <img 
+                  src={testimonial.avatar}
+                  alt={testimonial.author}
+                  class="w-12 h-12 rounded-full"
+                />
+                <div>
+                  <p class="font-semibold text-gray-900 text-base">{testimonial.author}</p>
+                  <p class="text-gray-500 text-sm">{testimonial.source}</p>
+                </div>
               </div>
+              <div class="flex-shrink-0" set:html={getSourceIcon(testimonial.sourceIcon)} />
             </div>
-            
-            <!-- Source Icon -->
-            <div class="flex-shrink-0" set:html={getSourceIcon(testimonial.sourceIcon)} />
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
 
-    <!-- See All Button -->
-    <div class="text-center">
-      <button class="text-accent-600 hover:text-accent-700 font-semibold text-sm transition-colors duration-200 underline decoration-2 underline-offset-4">
-        See all
-      </button>
+    <!-- Row 2 - scroll right -->
+    <div class="relative overflow-hidden">
+      <div class="flex gap-6 items-stretch animate-marquee-right will-change-transform">
+        {rowTwo.map((testimonial, idx) => (
+          <div class="bg-white p-8 transition-all duration-300 border border-gray-200 rounded-2xl w-[360px] min-h-[280px] flex flex-col justify-between flex-shrink-0 hover:border-gray-300">
+            <p class="text-gray-700 text-base leading-relaxed mb-8 line-clamp-5 flex-grow">
+              {testimonial.text}
+            </p>
+            <div class="flex items-center justify-between mt-auto">
+              <div class="flex items-center space-x-3">
+                <img 
+                  src={testimonial.avatar}
+                  alt={testimonial.author}
+                  class="w-12 h-12 rounded-full"
+                />
+                <div>
+                  <p class="font-semibold text-gray-900 text-base">{testimonial.author}</p>
+                  <p class="text-gray-500 text-sm">{testimonial.source}</p>
+                </div>
+              </div>
+              <div class="flex-shrink-0" set:html={getSourceIcon(testimonial.sourceIcon)} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .line-clamp-4 {
+  .line-clamp-5 {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  /* Calculate exact distance: 6 cards * 360px + 6 gaps * 24px = 2304px */
+  @keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-2304px); }
+  }
+  @keyframes marquee-right {
+    0% { transform: translateX(-2304px); }
+    100% { transform: translateX(0); }
+  }
+
+  .animate-marquee-left {
+    animation: marquee-left 40s linear infinite;
+  }
+  .animate-marquee-right {
+    animation: marquee-right 40s linear infinite;
+  }
+
+  /* Pause on hover */
+  .animate-marquee-left:hover,
+  .animate-marquee-right:hover {
+    animation-play-state: paused;
   }
 </style>
