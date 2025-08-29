@@ -373,11 +373,23 @@
 
   /* Sharp corporate buttons */
   .btn-pill-primary {
-    @apply inline-flex items-center gap-2 px-8 py-4 bg-accent-600 text-white hover:bg-accent-700 transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-accent-600 text-white font-medium relative overflow-hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .btn-pill-primary:hover {
+    @apply bg-accent-700 text-white;
   }
 
   .btn-pill-outline {
-    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-medium;
+    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-accent-600 text-accent-600 font-medium relative overflow-hidden;
+    transition: all 0.3s ease;
+    background: transparent;
+  }
+  
+  .btn-pill-outline:hover {
+    @apply bg-accent-700 text-white border-accent-700;
   }
 
   .card-hover {
