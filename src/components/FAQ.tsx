@@ -71,7 +71,7 @@ const FAQ = () => {
                     {faq.question}
                   </h3>
                   <motion.div 
-                    className="flex-shrink-0 text-primary-500"
+                    className="flex-shrink-0 text-accent-600"
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.2, ease: "easeInOut" }}
                   >
