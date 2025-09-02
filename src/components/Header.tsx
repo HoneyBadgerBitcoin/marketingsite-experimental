@@ -51,16 +51,17 @@ const buyItems = [
   ];
 
   const learnItems = [
-    { label: "About Us", href: "#about", icon: BookOpen },
+    { label: "Guides", href: "#guides", icon: BookOpen },
     { label: "News", href: "#news", icon: FileText },
     { label: "Bitcoin Wallets", href: "#bitcoin-wallets", icon: Wallet },
     { label: "Fraud Education", href: "#fraud-education", icon: Shield },
-    { label: "Terms and Conditions", href: "#terms-conditions", icon: FileText },
   ];
 
-  const supportItems = [
-    { label: "FAQ", href: "#faq", icon: HelpCircle },
+  const resourcesItems = [
+    { label: "Support Center", href: "/support", icon: HelpCircle },
+    { label: "About Us", href: "#about", icon: BookOpen },
     { label: "Contact Us", href: "#contact", icon: MessageCircle },
+    { label: "Terms and Conditions", href: "#terms-conditions", icon: FileText },
   ];
 
   return (
@@ -109,21 +110,21 @@ const buyItems = [
               <ChevronDown className="h-4 w-4" />
             </button>
             
-            {/* Support Dropdown Button */}
-            <button 
-              className="flex items-center space-x-1 px-3 py-2 text-white transition-colors duration-200 hover:bg-white/5 text-lg font-semibold"
-              onMouseEnter={() => setOpenDropdown('support')}
-            >
-              <span>Support</span>
-              <ChevronDown className="h-4 w-4" />
-            </button>
-            
             {/* Learn Dropdown Button */}
             <button 
               className="flex items-center space-x-1 px-3 py-2 text-white transition-colors duration-200 hover:bg-white/5 text-lg font-semibold"
               onMouseEnter={() => setOpenDropdown('learn')}
             >
               <span>Learn</span>
+              <ChevronDown className="h-4 w-4" />
+            </button>
+            
+            {/* Resources Dropdown Button */}
+            <button 
+              className="flex items-center space-x-1 px-3 py-2 text-white transition-colors duration-200 hover:bg-white/5 text-lg font-semibold"
+              onMouseEnter={() => setOpenDropdown('resources')}
+            >
+              <span>Resources</span>
               <ChevronDown className="h-4 w-4" />
             </button>
           </div>
@@ -212,8 +213,8 @@ const buyItems = [
             </div>
             
             <div className="py-2 border-t border-gray-100 mt-4">
-              <div className="text-sm font-medium text-gray-500 mb-2">Support</div>
-              {supportItems.map((item) => (
+              <div className="text-sm font-medium text-gray-500 mb-2">Learn</div>
+              {learnItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
@@ -226,8 +227,8 @@ const buyItems = [
             </div>
             
             <div className="py-2 border-t border-gray-100 mt-4">
-              <div className="text-sm font-medium text-gray-500 mb-2">Learn</div>
-              {learnItems.map((item) => (
+              <div className="text-sm font-medium text-gray-500 mb-2">Resources</div>
+              {resourcesItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
@@ -285,10 +286,10 @@ const buyItems = [
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="absolute left-0 right-0 bg-[#141a1f] text-gray-200 shadow-xl border-t border-gray-800/50"
+          className="absolute left-0 right-0 bg-[#141a1f] text-gray-200"
           style={{ 
             borderRadius: 0,
-            top: '80px' // Exactly the height of the nav (h-20 = 80px)
+            top: '79px' // Overlap by 1px to eliminate any gap
           }}
         >
           <div className="container-custom py-8">
@@ -329,10 +330,10 @@ const buyItems = [
               <div>
                 <div className="mb-6">
                   <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                    Learn & Resources
+                    Learn
                   </h3>
                   <p className="text-sm text-gray-400">
-                    Discover more about cryptocurrency and our company
+                    Discover more about cryptocurrency
                   </p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-2">
@@ -420,19 +421,19 @@ const buyItems = [
               </div>
             )}
 
-            {/* Support Mega Content */}
-            {openDropdown === 'support' && (
+            {/* Resources Mega Content */}
+            {openDropdown === 'resources' && (
               <div>
                 <div className="mb-6">
                   <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                    Support & Help
+                    Resources & Support
                   </h3>
                   <p className="text-sm text-gray-400">
-                    Get assistance and find answers to your questions
+                    Get assistance and learn more about our services
                   </p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-2">
-                  {supportItems.map((item) => (
+                  {resourcesItems.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
