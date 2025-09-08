@@ -2,14 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.tsx';
 import Hero from '../components/Hero.astro';
-import Testimonials from '../components/Testimonials.astro';
 import TabServices from '../components/TabServices.tsx';
-import Stats from '../components/Stats.tsx';
 import EnterpriseCrypto from '../components/EnterpriseCrypto.astro';
 import Insights from '../components/Insights.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
-import FAQ from '../components/FAQ.tsx';
-import CTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -18,23 +14,16 @@ import Footer from '../components/Footer.astro';
     <Header client:load />
     <main>
     <Hero />
-      <!-- Stats Section - Inverted blue background -->
-      <section class="section-padding-sm" style="background: linear-gradient(135deg, #024eb3 0%, #023f95 100%);">
-        <Stats client:load />
-      </section>
       
       <!-- Services Section - Clean white background -->
       <section class="bg-white">
         <TabServices client:load />
       </section>
       
-      <!-- Enterprise Features Section - Black background -->
+      <!-- Built for crypto at scale - Combined Features, Stats & Reviews -->
       <section style="background-color: #000000;">
         <EnterpriseCrypto />
       </section>
-      
-      <!-- Testimonials Section -->
-      <Testimonials />
       
       <!-- Insights - Professional gray background -->
       <section class="section-mint section-padding">
@@ -45,15 +34,6 @@ import Footer from '../components/Footer.astro';
     <!-- Full-width Newsletter CTA Section -->
     <NewsletterCTA />
     
-    <main>
-      <!-- FAQ - Professional gray background -->
-      <section class="section-neutral section-padding">
-        <FAQ client:load />
-      </section>
-    </main>
-    
-    <!-- Full-width Final CTA Section -->
-    <CTA />
     
     <Footer />
   </div>

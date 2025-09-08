@@ -23,16 +23,36 @@ const FAQ = () => {
       answer: "Using HoneyBadger ATMs is one of the safest ways to buy Bitcoin. Our ATMs are FINTRAC regulated, located in secure public locations, and don't require you to share personal banking information online. Plus, you receive your Bitcoin instantly to your own wallet."
     },
     {
-      question: "How many Bitcoins are left?",
-      answer: "Bitcoin has a maximum supply of 21 million coins. As of now, over 19 million Bitcoins have been mined, leaving less than 2 million left to be mined. The last Bitcoin is expected to be mined around the year 2140 due to the halving mechanism."
+      question: "What should I do if an ATM is not working?",
+      answer: "If you encounter an ATM that's not working, please contact our 24/7 support team immediately at 1-800-BADGER or through our live chat. We'll help resolve the issue quickly and direct you to the nearest working ATM. Our technical team monitors all machines and can often resolve issues remotely."
     },
     {
-      question: "Can Bitcoin transactions be traced?",
-      answer: "Bitcoin transactions are recorded on a public blockchain, making them traceable but pseudonymous. While transaction amounts and wallet addresses are visible, they don't directly reveal personal identities unless linked through other means. This provides transparency while maintaining privacy."
+      question: "How long do Bitcoin transactions take?",
+      answer: "Bitcoin transactions from our ATMs are typically sent to your wallet immediately, but blockchain confirmations usually take 10-60 minutes. The time can vary based on network congestion and the transaction fee. You'll receive a confirmation receipt with your transaction ID for tracking."
+    },
+    {
+      question: "What if I don't receive my Bitcoin?",
+      answer: "If you don't receive your Bitcoin within 2 hours, contact our support team with your transaction receipt. We'll trace the transaction and resolve the issue immediately. All transactions are monitored, and we have a 99.9% success rate with instant resolution for any issues."
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: "Our ATMs accept cash in Canadian dollars. We also offer debit card purchases at select locations. For larger transactions, we provide OTC (over-the-counter) services that accept bank transfers and certified checks. Contact support for enterprise payment options."
+    },
+    {
+      question: "Are there transaction limits?",
+      answer: "Yes, for regulatory compliance, we have daily limits. Unverified users can transact up to $1,000 CAD per day. With basic verification, limits increase to $3,000 per day. For higher limits up to $10,000+ per day, complete our enhanced verification process through our app or website."
+    },
+    {
+      question: "How can I find the nearest ATM?",
+      answer: "Use our ATM locator on our website or mobile app to find the nearest location. Our interactive map shows real-time ATM status, operating hours, and available services. You can also filter by features like 24/7 access, debit card acceptance, or wheelchair accessibility."
     },
     {
       question: "What is the minimum amount to invest in Bitcoin?",
       answer: "There's no official minimum to invest in Bitcoin since it's divisible up to 8 decimal places. At HoneyBadger ATMs, our minimum transaction amount varies by location but is typically around $20-50 CAD, making Bitcoin accessible to everyone regardless of budget."
+    },
+    {
+      question: "How do I contact customer support?",
+      answer: "Our customer support is available 24/7/365 through multiple channels: call 1-800-BADGER, email support@honeybadger.io, or use our live chat feature on the website. For urgent ATM issues, our phone support provides the fastest response time, typically under 2 minutes."
     }
   ];
 
@@ -47,15 +67,8 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20">
+    <section className="py-0">
       <div className="container-custom">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-gray-900">
-            Frequently asked questions
-          </h2>
-        </div>
-
         {/* FAQ Items */}
         <div className="max-w-4xl mx-auto">
           {faqs.map((faq, index) => {

@@ -2,45 +2,24 @@
 import { ArrowRight } from 'lucide-react';
 ---
 
-<!-- Full-width Ripple-inspired CTA Section -->
-<section class="relative bg-accent-600 overflow-hidden">
-  <!-- Background Images -->
-  <div class="absolute inset-0">
-    <!-- Left Side - Marunouchi Line -->
-    <div class="absolute left-0 bottom-0 w-80 h-full">
-      <img 
-        src="/marunouchi-line.png" 
-        alt="Marunouchi Line" 
-        class="w-full h-full object-contain object-bottom"
-      />
-    </div>
-    
-    <!-- Right Side - Wall Street Bull -->
-    <div class="absolute right-0 bottom-0 w-80 h-full">
-      <img 
-        src="/wall-st-bull.png" 
-        alt="Wall Street Bull" 
-        class="w-full h-full object-contain object-bottom"
-      />
-    </div>
-  </div>
-  
+<!-- Full-width CTA Section -->
+<section class="relative bg-white overflow-hidden">
   <!-- Content -->
-  <div class="relative z-10 py-24 md:py-32">
+  <div class="py-24 md:py-32">
     <div class="container-custom text-center">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl md:text-6xl text-white font-bold mb-8">
+        <h2 class="text-4xl md:text-5xl text-gray-900 font-bold mb-8">
           Cash In on Crypto Today
         </h2>
-        <p class="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
           Join thousands of Canadians who trust HoneyBadger for secure, fast, and reliable cryptocurrency transactions.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="px-8 py-4 bg-white text-accent-700 font-semibold text-lg transition-all duration-300 flex items-center justify-center min-w-[160px] border-2 border-white hover:bg-accent-700 hover:text-white hover:border-accent-700">
+          <button class="px-8 py-4 bg-accent-600 text-white font-semibold text-lg transition-all duration-300 flex items-center justify-center min-w-[160px] border-2 border-accent-600 hover:bg-accent-700 hover:border-accent-700">
             Buy Online
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
-          <button class="px-8 py-4 bg-transparent text-white font-semibold text-lg transition-all duration-300 min-w-[160px] border-2 border-white hover:bg-white hover:text-accent-700">
+          <button class="px-8 py-4 bg-transparent text-accent-600 font-semibold text-lg transition-all duration-300 min-w-[160px] border-2 border-accent-600 hover:bg-accent-600 hover:text-white">
             Find ATM
           </button>
         </div>
