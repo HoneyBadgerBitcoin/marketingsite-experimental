@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Menu, 
   X, 
@@ -17,15 +17,34 @@ import {
   FileText, 
   Shield, 
   Wallet, 
-  BookOpen
+  BookOpen,
+  Search
 } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState("EN");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
   
   // Single state for which dropdown is open
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  // Handle scroll to change navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const heroHeight = window.innerHeight; // Hero section is full viewport height
+      // Only become opaque when actually leaving the hero section
+      setIsScrolled(scrollPosition > heroHeight * 2.0); // Trigger after parallax completes
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial scroll position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const languages = [
     { code: "EN", label: "English", region: "Canada" },
@@ -69,7 +88,11 @@ const buyItems = [
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 w-full bg-[#141a1f] text-gray-200 z-50"
+        className={`fixed top-0 w-full text-gray-200 z-50 transition-all duration-700 ease-in-out ${
+          isScrolled 
+            ? 'bg-[#141a1f] shadow-lg' 
+            : 'bg-transparent'
+        }`}
         onMouseLeave={() => setOpenDropdown(null)}
       >
       <div className="container-custom">
@@ -122,7 +145,7 @@ const buyItems = [
             {/* Company Dropdown Button */}
             <button 
               className="flex items-center space-x-1 px-3 py-2 text-white transition-colors duration-200 hover:bg-white/5 text-lg font-semibold"
-              onMouseEnter={() => setOpenDropdown('resources')}
+              onMouseEnter={() => setOpenDropdown('company')}
             >
               <span>Company</span>
               <ChevronDown className="h-4 w-4" />
@@ -130,7 +153,8 @@ const buyItems = [
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4"
+               onMouseEnter={() => setOpenDropdown(null)}>
             {/* Language Switch Button */}
             <button 
               className="flex items-center space-x-2 px-3 py-2 text-white transition-colors duration-200 hover:bg-white/5 text-base font-medium"
@@ -141,10 +165,28 @@ const buyItems = [
               <ChevronDown className="h-4 w-4" />
             </button>
             
-            <button className="px-4 py-2 text-white transition-colors duration-200 hover:bg-white/5 text-base font-medium">
+            <button 
+              className="px-4 py-2 text-white transition-colors duration-200 hover:bg-white/5 text-base font-medium"
+              onMouseEnter={() => setOpenDropdown(null)}
+            >
               Log in
             </button>
-            <a href="#contact" className="btn-pill text-base">Sign up</a>
+            <a 
+              href="#contact" 
+              className="btn-pill text-base"
+              onMouseEnter={() => setOpenDropdown(null)}
+            >
+              Sign up
+            </a>
+            <button 
+              className="p-3 text-white transition-all duration-200 hover:bg-white/5 rounded-lg"
+              aria-label="Open search"
+              title="Search"
+              onClick={() => setIsSearchOpen(true)}
+              onMouseEnter={() => setOpenDropdown(null)}
+            >
+              <Search className="h-5 w-5" />
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -167,7 +209,9 @@ const buyItems = [
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden border-t border-gray-800/50 bg-[#141a1f] text-gray-200"
+          className={`md:hidden border-t border-gray-800/50 text-gray-200 transition-colors duration-700 ease-in-out ${
+            isScrolled ? 'bg-[#141a1f]' : 'bg-transparent'
+          }`}
         >
           <div className="container-custom py-4">
             <div className="py-2 border-b border-gray-100 mb-4">
@@ -286,7 +330,9 @@ const buyItems = [
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="absolute left-0 right-0 bg-[#141a1f] text-gray-200"
+          className={`absolute left-0 right-0 text-gray-200 transition-colors duration-700 ease-in-out ${
+            isScrolled ? 'bg-[#141a1f]' : 'bg-transparent'
+          }`}
           style={{ 
             borderRadius: 0,
             top: '79px' // Overlap by 1px to eliminate any gap
@@ -316,7 +362,7 @@ const buyItems = [
                         <item.icon className="h-5 w-5" />
                       </div>
                       <div className="text-left">
-                        <div className="font-medium text-gray-100 group-hover:text-white">{item.label}</div>
+                        <div className="text-base font-medium text-gray-100 group-hover:text-white">{item.label}</div>
                         <div className="text-xs text-gray-400">Learn more</div>
                       </div>
                     </a>
@@ -348,7 +394,7 @@ const buyItems = [
                         <item.icon className="h-5 w-5" />
                       </div>
                       <div className="text-left">
-                        <div className="font-medium text-gray-100 group-hover:text-white">{item.label}</div>
+                        <div className="text-base font-medium text-gray-100 group-hover:text-white">{item.label}</div>
                         <div className="text-xs text-gray-400">Learn more</div>
                       </div>
                     </a>
@@ -380,7 +426,7 @@ const buyItems = [
                         <item.icon className="h-5 w-5" />
                       </div>
                       <div className="text-left">
-                        <div className="font-medium text-gray-100 group-hover:text-white">{item.label}</div>
+                        <div className="text-base font-medium text-gray-100 group-hover:text-white">{item.label}</div>
                         <div className="text-xs text-gray-400">Learn more</div>
                       </div>
                     </a>
@@ -412,7 +458,7 @@ const buyItems = [
                         <item.icon className="h-5 w-5" />
                       </div>
                       <div className="text-left">
-                        <div className="font-medium text-gray-100 group-hover:text-white">{item.label}</div>
+                        <div className="text-base font-medium text-gray-100 group-hover:text-white">{item.label}</div>
                         <div className="text-xs text-gray-400">Learn more</div>
                       </div>
                     </a>
@@ -422,7 +468,7 @@ const buyItems = [
             )}
 
             {/* Company Mega Content */}
-            {openDropdown === 'resources' && (
+            {openDropdown === 'company' && (
               <div>
                 <div className="mb-6">
                   <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
@@ -444,7 +490,7 @@ const buyItems = [
                         <item.icon className="h-5 w-5" />
                       </div>
                       <div className="text-left">
-                        <div className="font-medium text-gray-100 group-hover:text-white">{item.label}</div>
+                        <div className="text-base font-medium text-gray-100 group-hover:text-white">{item.label}</div>
                         <div className="text-xs text-gray-400">Learn more</div>
                       </div>
                     </a>
@@ -484,7 +530,7 @@ const buyItems = [
                         </div>
                       </div>
                       <div className="text-left">
-                        <div className="font-medium">{language.label}</div>
+                        <div className="text-base font-medium">{language.label}</div>
                         <div className="text-xs text-gray-400">
                           {language.region}
                         </div>

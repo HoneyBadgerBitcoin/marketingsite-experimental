@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.tsx';
-import Hero from '../components/Hero.astro';
+import ScrollHero from '../components/ScrollHero.tsx';
 import TabServices from '../components/TabServices.tsx';
 import EnterpriseCrypto from '../components/EnterpriseCrypto.astro';
 import Insights from '../components/Insights.astro';
@@ -13,7 +13,7 @@ import Footer from '../components/Footer.astro';
   <div class="min-h-screen bg-white">
     <Header client:load />
     <main>
-    <Hero />
+    <ScrollHero client:load />
       
       <!-- Services Section - Clean white background -->
       <section class="bg-white">

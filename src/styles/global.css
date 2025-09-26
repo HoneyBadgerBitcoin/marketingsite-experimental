@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Fjalla+One&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Fjalla+One&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,550 +6,728 @@
 
 /* Gulams Condensed Font Face Definitions */
 @font-face {
-  font-family: "Gulams Condensed";
-  src: url("/fonts/GulamsCondensed-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gulams Condensed";
+    src: url("/fonts/GulamsCondensed-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gulams Condensed";
-  src: url("/fonts/GulamsCondensed-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gulams Condensed";
+    src: url("/fonts/GulamsCondensed-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gulams Condensed";
-  src: url("/fonts/GulamsCondensed-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gulams Condensed";
+    src: url("/fonts/GulamsCondensed-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gulams Condensed";
-  src: url("/fonts/GulamsCondensed-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gulams Condensed";
+    src: url("/fonts/GulamsCondensed-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Balinese Culture Font Face Definition */
 @font-face {
-  font-family: "Balinese Culture";
-  src: url("/fonts/BalineseCulture.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Balinese Culture";
+    src: url("/fonts/BalineseCulture.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Condensed Neue Soft Font */
 @font-face {
-  font-family: "Condensed Neue Soft";
-  src: url("/fonts/CondensedNeueSoft.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Condensed Neue Soft";
+    src: url("/fonts/CondensedNeueSoft.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Dacht Font */
 @font-face {
-  font-family: "Dacht";
-  src: url("/fonts/Dacht.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Dacht";
+    src: url("/fonts/Dacht.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Falgard Font Family */
 @font-face {
-  font-family: "Falgard";
-  src: url("/fonts/Falgard.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Falgard";
+    src: url("/fonts/Falgard.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Falgard";
-  src: url("/fonts/Falgard-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Falgard";
+    src: url("/fonts/Falgard-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Gendar Font Family */
 @font-face {
-  font-family: "Gendar";
-  src: url("/fonts/Gendar-ExtraLight.woff2") format("woff2");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gendar";
+    src: url("/fonts/Gendar-ExtraLight.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gendar";
-  src: url("/fonts/Gendar-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gendar";
+    src: url("/fonts/Gendar-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gendar";
-  src: url("/fonts/Gendar-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gendar";
+    src: url("/fonts/Gendar-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gendar";
-  src: url("/fonts/Gendar-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gendar";
+    src: url("/fonts/Gendar-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gendar";
-  src: url("/fonts/Gendar-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gendar";
+    src: url("/fonts/Gendar-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gendar";
-  src: url("/fonts/Gendar-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gendar";
+    src: url("/fonts/Gendar-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gendar";
-  src: url("/fonts/Gendar-ExtraBold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gendar";
+    src: url("/fonts/Gendar-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Granika Font */
 @font-face {
-  font-family: "Granika";
-  src: url("/fonts/Granika.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Granika";
+    src: url("/fonts/Granika.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Marvelous Font Family */
 @font-face {
-  font-family: "Marvelous";
-  src: url("/fonts/Marvelous Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Marvelous";
+    src: url("/fonts/Marvelous Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Marvelous";
-  src: url("/fonts/Marvelous Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Marvelous";
+    src: url("/fonts/Marvelous Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Marvelous";
-  src: url("/fonts/Marvelous Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Marvelous";
+    src: url("/fonts/Marvelous Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Marvelous";
-  src: url("/fonts/Marvelous Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Marvelous";
+    src: url("/fonts/Marvelous Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Marvelous";
-  src: url("/fonts/Marvelous Semi Bold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Marvelous";
+    src: url("/fonts/Marvelous Semi Bold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Marvelous";
-  src: url("/fonts/Marvelous Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Marvelous";
+    src: url("/fonts/Marvelous Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Neohead Font */
 @font-face {
-  font-family: "Neohead";
-  src: url("/fonts/Neohead.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Neohead";
+    src: url("/fonts/Neohead.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Bondia Condensed Font Family */
 @font-face {
-  font-family: "Bondia";
-  src: url("/fonts/Bondia-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Bondia";
+    src: url("/fonts/Bondia-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* SF Pro Display Font Family */
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "SF Pro Display";
+    src: url("/fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "SF Pro Display";
+    src: url("/fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "SF Pro Display";
+    src: url("/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Bondia";
-  src: url("/fonts/Bondia-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Bondia";
+    src: url("/fonts/Bondia-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Bondia";
-  src: url("/fonts/Bondia-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Bondia";
+    src: url("/fonts/Bondia-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Bondia";
-  src: url("/fonts/Bondia-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Bondia";
+    src: url("/fonts/Bondia-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Bondia";
-  src: url("/fonts/Bondia-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Bondia";
+    src: url("/fonts/Bondia-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Bondia";
-  src: url("/fonts/Bondia-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Bondia";
+    src: url("/fonts/Bondia-ExtraBold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Bondia";
-  src: url("/fonts/Bondia-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Bondia";
+    src: url("/fonts/Bondia-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PP Neue Montreal";
+    src: url("/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ivy Presto";
+    src: url("/fonts/ivypresto.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @layer base {
-  /* Add subtle rounded corners to specific elements for a softer look */
-  div, article, aside,
-  button, input, textarea, select,
-  img, video, canvas, iframe,
-  table, th, td,
-  ul, ol, li,
-  blockquote, pre, code,
-  form, fieldset, legend {
-    border-radius: 0.25rem; /* 4px - subtle rounding */
-  }
-  
-  /* Keep header, nav, section, main, footer, and dropdowns sharp for professional look */
-  header, nav, section, main, footer,
-  [class*="dropdown"], [class*="mega"], [class*="menu"] {
-    border-radius: 0 !important;
-  }
-  
-  /* Reset border-radius for elements that should remain sharp */
-  html, body, svg, path, 
-  p, h1, h2, h3, h4, h5, h6,
-  ::before, ::after {
-    border-radius: 0 !important;
-  }
-  
-  /* Allow spans used as badges/pills to have rounded corners */
-  span[class*="bg-"], span[class*="badge"], span[class*="pill"] {
-    border-radius: 0.25rem !important;
-  }
-  
-  /* Allow links styled as buttons to have rounded corners */
-  a.btn-primary, a.btn-secondary, a.btn-outline, 
-  a.btn-pill, a.btn-pill-primary, a.btn-pill-outline,
-  a[class*="btn-"], a[class*="button"] {
-    border-radius: 0.25rem !important;
-  }
+    /* Add subtle rounded corners to specific elements for a softer look */
+    div,
+    article,
+    aside,
+    button,
+    input,
+    textarea,
+    select,
+    img,
+    video,
+    canvas,
+    iframe,
+    table,
+    th,
+    td,
+    ul,
+    ol,
+    li,
+    blockquote,
+    pre,
+    code,
+    form,
+    fieldset,
+    legend {
+        border-radius: 0.25rem; /* 4px - subtle rounding */
+    }
 
-  html {
-    scroll-behavior: smooth;
-  }
+    /* Keep header, nav, section, main, footer, and dropdowns sharp for professional look */
+    header,
+    nav,
+    section,
+    main,
+    footer,
+    [class*="dropdown"],
+    [class*="mega"],
+    [class*="menu"] {
+        border-radius: 0 !important;
+    }
 
-  body {
-    @apply antialiased font-body;
-  }
+    /* Reset border-radius for elements that should remain sharp */
+    html,
+    body,
+    svg,
+    path,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ::before,
+    ::after {
+        border-radius: 0 !important;
+    }
 
-  h1 {
-    @apply font-heading font-medium;
-  }
+    /* Allow spans used as badges/pills to have rounded corners */
+    span[class*="bg-"],
+    span[class*="badge"],
+    span[class*="pill"] {
+        border-radius: 0.25rem !important;
+    }
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-medium;
-  }
+    /* Allow links styled as buttons to have rounded corners */
+    a.btn-primary,
+    a.btn-secondary,
+    a.btn-outline,
+    a.btn-pill,
+    a.btn-pill-primary,
+    a.btn-pill-outline,
+    a[class*="btn-"],
+    a[class*="button"] {
+        border-radius: 0.25rem !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply antialiased font-body;
+    }
+
+    h1 {
+        @apply font-heading font-medium;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading font-medium;
+    }
 }
 
 @layer components {
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
+    .container-custom {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
 
-  .btn-primary {
-    @apply px-6 py-3 bg-accent-600 text-white hover:bg-accent-700 transition-colors duration-200 font-semibold shadow-sm;
-  }
+    .btn-primary {
+        @apply px-6 py-3 bg-accent-600 text-white hover:bg-accent-700 transition-colors duration-200 font-semibold shadow-sm;
+    }
 
-  .btn-secondary {
-    @apply px-6 py-3 bg-dark-accent-600 text-white hover:bg-dark-accent-700 transition-colors duration-200 font-semibold shadow-sm;
-  }
+    .btn-secondary {
+        @apply px-6 py-3 bg-dark-accent-600 text-white hover:bg-dark-accent-700 transition-colors duration-200 font-semibold shadow-sm;
+    }
 
-  .btn-outline {
-    @apply px-6 py-3 border border-gray-300 text-gray-800 hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200 font-medium;
-  }
+    .btn-outline {
+        @apply px-6 py-3 border border-gray-300 text-gray-800 hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200 font-medium;
+    }
 
-  .glass-effect {
-    @apply backdrop-blur-lg bg-white/10 border border-white/20;
-  }
+    .glass-effect {
+        @apply backdrop-blur-lg bg-white/10 border border-white/20;
+    }
 
-  /* Sharp pill CTA */
-  .btn-pill {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-accent-600 text-white hover:bg-accent-700 transition-colors duration-200 font-medium shadow-sm;
-  }
+    /* Sharp pill CTA */
+    .btn-pill {
+        @apply inline-flex items-center gap-2 px-5 py-2.5 bg-accent-600 text-white hover:bg-accent-700 transition-colors duration-200 font-medium shadow-sm;
+    }
 
-  /* Sharp corporate buttons */
-  .btn-pill-primary {
-    @apply inline-flex items-center gap-2 px-8 py-4 bg-accent-600 text-white font-medium relative overflow-hidden;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-  
-  .btn-pill-primary:hover {
-    @apply bg-accent-700 text-white;
-  }
+    /* Sharp corporate buttons */
+    .btn-pill-primary {
+        @apply inline-flex items-center gap-2 px-8 py-4 bg-accent-600 text-white font-medium relative overflow-hidden;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
 
-  .btn-pill-outline {
-    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-accent-600 text-accent-600 font-medium relative overflow-hidden;
-    transition: all 0.3s ease;
-    background: transparent;
-  }
-  
-  .btn-pill-outline:hover {
-    @apply bg-accent-700 text-white border-accent-700;
-  }
+    .btn-pill-primary:hover {
+        @apply bg-accent-700 text-white;
+    }
 
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-[1.01] hover:shadow-card-hover;
-  }
+    .btn-pill-outline {
+        @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-accent-600 text-accent-600 font-medium relative overflow-hidden;
+        transition: all 0.3s ease;
+        background: transparent;
+    }
 
-  /* Shadows */
-  .shadow-card { box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08); }
-  .shadow-card-hover { box-shadow: 0 16px 40px rgba(16, 24, 40, 0.12); }
+    .btn-pill-outline:hover {
+        @apply bg-accent-700 text-white border-accent-700;
+    }
 
-  /* Gradients */
-  .bg-gradient-primary { background-image: linear-gradient(135deg, #024eb3 0%, #023f95 100%); }
-  .bg-gradient-secondary { background-image: linear-gradient(135deg, #6ba6ff 0%, #3d7fff 100%); }
-  .bg-gradient-accent { background-image: linear-gradient(135deg, #024eb3 0%, #023377 100%); }
-  .bg-gradient-dark { background-image: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.2) 100%); }
+    /* Dark theme variants for hero section */
+    .btn-pill-primary-dark {
+        @apply inline-flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-900 font-medium relative overflow-hidden rounded-full;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
 
-  /* Professional hero background */
-  .bg-ripple-hero {
-    background:
-      radial-gradient(1200px 600px at 80% -10%, rgba(2,78,179,0.04) 0%, transparent 60%),
-      radial-gradient(1000px 500px at -20% 40%, rgba(15,23,42,0.02) 0%, transparent 60%),
-      #ffffff;
-  }
+    .btn-pill-primary-dark:hover {
+        @apply bg-white text-gray-900;
 
-  /* Sharp Corporate Cards */
-  .card-modern {
-    @apply bg-white shadow-card p-8 transition-all duration-300
+        transform: translateY(-1px);
+    }
+
+    .btn-pill-outline-dark {
+        @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white font-medium relative overflow-hidden backdrop-blur-sm rounded-full;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .btn-pill-outline-dark:hover {
+        @apply border-white/50 text-white;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-1px);
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:scale-[1.01] hover:shadow-card-hover;
+    }
+
+    /* Shadows */
+    .shadow-card {
+        box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+    }
+    .shadow-card-hover {
+        box-shadow: 0 16px 40px rgba(16, 24, 40, 0.12);
+    }
+
+    /* Gradients */
+    .bg-gradient-primary {
+        background-image: linear-gradient(135deg, #024eb3 0%, #023f95 100%);
+    }
+    .bg-gradient-secondary {
+        background-image: linear-gradient(135deg, #6ba6ff 0%, #3d7fff 100%);
+    }
+    .bg-gradient-accent {
+        background-image: linear-gradient(135deg, #024eb3 0%, #023377 100%);
+    }
+    .bg-gradient-dark {
+        background-image: linear-gradient(
+            180deg,
+            rgba(10, 10, 10, 0) 0%,
+            rgba(10, 10, 10, 0.2) 100%
+        );
+    }
+
+    /* Professional hero background */
+    .bg-ripple-hero {
+        background:
+            radial-gradient(
+                1200px 600px at 80% -10%,
+                rgba(2, 78, 179, 0.04) 0%,
+                transparent 60%
+            ),
+            radial-gradient(
+                1000px 500px at -20% 40%,
+                rgba(15, 23, 42, 0.02) 0%,
+                transparent 60%
+            ),
+            #ffffff;
+    }
+
+    /* Sharp Corporate Cards */
+    .card-modern {
+        @apply bg-white shadow-card p-8 transition-all duration-300
            hover:shadow-card-hover hover:-translate-y-2;
-  }
-  
-  .card-gradient {
-    @apply p-8 text-white shadow-xl transition-all duration-300
+    }
+
+    .card-gradient {
+        @apply p-8 text-white shadow-xl transition-all duration-300
            hover:shadow-2xl hover:-translate-y-2;
-  }
-  
-  .card-colored {
-    @apply p-8 shadow-lg transition-all duration-300
+    }
+
+    .card-colored {
+        @apply p-8 shadow-lg transition-all duration-300
            hover:shadow-xl hover:-translate-y-2;
-  }
+    }
 
-  /* Gradient Text */
-  .text-gradient-primary {
-    @apply bg-gradient-primary bg-clip-text text-transparent;
-  }
-  
-  .text-gradient-secondary {
-    @apply bg-gradient-secondary bg-clip-text text-transparent;
-  }
-  
-  .text-gradient-accent {
-    background: linear-gradient(135deg, #024eb3 0%, #3d7fff 40%, #024eb3 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-  }
+    /* Gradient Text */
+    .text-gradient-primary {
+        @apply bg-gradient-primary bg-clip-text text-transparent;
+    }
 
-  /* Badge/Pills */
-  .badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
-  }
-  
-  .badge-primary {
-    @apply badge bg-primary-100 text-primary-700;
-  }
-  
-  .badge-success {
-    @apply badge bg-success-100 text-success-700;
-  }
-  
-  .badge-warning {
-    @apply badge bg-warning-100 text-warning-700;
-  }
+    .text-gradient-secondary {
+        @apply bg-gradient-secondary bg-clip-text text-transparent;
+    }
 
-  /* Input Fields */
-  .input-modern {
-    @apply w-full px-6 py-4 bg-gray-50 border border-gray-200
+    .text-gradient-accent {
+        background: linear-gradient(
+            135deg,
+            #024eb3 0%,
+            #3d7fff 40%,
+            #024eb3 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+    }
+
+    /* Badge/Pills */
+    .badge {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    }
+
+    /* Scrolling animation */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-33.333%);
+        }
+    }
+
+    .animate-scroll-left {
+        animation: scroll-left 60s linear infinite;
+    }
+
+    /* Logo fade mask - creates opacity fade without visible background */
+    .logo-fade-mask {
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+    }
+
+    .badge-primary {
+        @apply badge bg-primary-100 text-primary-700;
+    }
+
+    .badge-success {
+        @apply badge bg-success-100 text-success-700;
+    }
+
+    .badge-warning {
+        @apply badge bg-warning-100 text-warning-700;
+    }
+
+    /* Input Fields */
+    .input-modern {
+        @apply w-full px-6 py-4 bg-gray-50 border border-gray-200
            focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
            transition-all duration-300;
-  }
+    }
 
-  /* Glass effect for dark sections */
-  .glass-dark {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
-  }
-  
-  /* Professional section backgrounds */
-  .section-sand {
-    @apply bg-white;
-  }
-  
-  .section-mint {
-    @apply bg-gray-50;
-  }
-  
-  .section-blue {
-    @apply bg-slate-50;
-  }
-  
-  .section-purple {
-    @apply bg-white;
-  }
-  
-  .section-neutral {
-    @apply bg-gray-50;
-  }
-  
-  .section-dark {
-    @apply bg-slate-900 text-white;
-  }
-  
-  .section-corporate {
-    @apply bg-gradient-to-b from-slate-50 to-white;
-  }
-  
-  /* Modern section spacing */
-  .section-padding {
-    @apply py-16 md:py-20 lg:py-24;
-  }
-  
-  .section-padding-sm {
-    @apply py-12 md:py-16 lg:py-20;
-  }
+    /* Glass effect for dark sections */
+    .glass-dark {
+        @apply bg-white/10 backdrop-blur-lg border border-white/20;
+    }
+
+    /* Professional section backgrounds */
+    .section-sand {
+        @apply bg-white;
+    }
+
+    .section-mint {
+        @apply bg-gray-50;
+    }
+
+    .section-blue {
+        @apply bg-slate-50;
+    }
+
+    .section-purple {
+        @apply bg-white;
+    }
+
+    .section-neutral {
+        @apply bg-gray-50;
+    }
+
+    .section-dark {
+        @apply bg-slate-900 text-white;
+    }
+
+    .section-corporate {
+        @apply bg-gradient-to-b from-slate-50 to-white;
+    }
+
+    /* Modern section spacing */
+    .section-padding {
+        @apply py-16 md:py-20 lg:py-24;
+    }
+
+    .section-padding-sm {
+        @apply py-12 md:py-16 lg:py-20;
+    }
 }
 
 @layer utilities {
-  /* Clean, minimal utilities only */
-  
-  /* Ensure tab navigation buttons and their borders remain straight */
-  .inline-flex.border-b-2 button,
-  button[class*="border-b-2"] {
-    border-radius: 0 !important;
-  }
+    /* Clean, minimal utilities only */
+
+    /* Ensure tab navigation buttons and their borders remain straight */
+    .inline-flex.border-b-2 button,
+    button[class*="border-b-2"] {
+        border-radius: 0 !important;
+    }
 }
 
 /* Clean, minimal keyframes only */
 
 /* Liquid Glass Effect Animations */
 @keyframes liquid-shimmer {
-  0% {
-    transform: translateX(-100%) skewX(-12deg);
-  }
-  100% {
-    transform: translateX(200%) skewX(-12deg);
-  }
+    0% {
+        transform: translateX(-100%) skewX(-12deg);
+    }
+    100% {
+        transform: translateX(200%) skewX(-12deg);
+    }
 }
 
 @keyframes liquid-float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-  66% {
-    transform: translateY(5px) rotate(-1deg);
-  }
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    66% {
+        transform: translateY(5px) rotate(-1deg);
+    }
 }
 
 .mask-badger {
-  -webkit-mask-image: radial-gradient(circle at 50% 60%, black 40%, transparent 70%);
-  mask-image: radial-gradient(circle at 50% 60%, black 40%, transparent 70%);
+    -webkit-mask-image: radial-gradient(
+        circle at 50% 60%,
+        black 40%,
+        transparent 70%
+    );
+    mask-image: radial-gradient(circle at 50% 60%, black 40%, transparent 70%);
+}
+
+/* Logo banner animation */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-33.33%);
+    }
+}
+
+.animate-scroll-left {
+    animation: scroll-left 40s linear infinite;
+}
+
+/* Logo fade mask */
+.logo-fade-mask {
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
 }
