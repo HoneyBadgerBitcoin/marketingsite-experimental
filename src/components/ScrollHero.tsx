@@ -97,7 +97,7 @@ const ScrollHero: React.FC = () => {
         <div className="text-center -mt-20 md:-mt-24 lg:-mt-28 relative z-30">
           <h1
             className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-            style={{ fontFamily: "Ivy Presto, serif" }}
+            style={{ fontFamily: "SF Pro Display, sans-serif" }}
           >
             Canada's trusted Bitcoin
             <br />
@@ -115,7 +115,7 @@ const ScrollHero: React.FC = () => {
         <div className="relative text-center">
           <h1
             className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-            style={{ fontFamily: "Ivy Presto, serif" }}
+            style={{ fontFamily: "SF Pro Display, sans-serif" }}
           >
             Buy Bitcoin
             <span className="inline-block mx-4 align-middle w-36 h-36">

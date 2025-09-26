@@ -295,14 +295,6 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: "Ivy Presto";
-    src: url("/fonts/ivypresto.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 @layer base {
     /* Add subtle rounded corners to specific elements for a softer look */
     div,
