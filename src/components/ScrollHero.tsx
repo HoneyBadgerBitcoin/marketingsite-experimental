@@ -42,7 +42,7 @@ const ScrollHero: React.FC = () => {
         duration: 0.5,
         ease: "power2.inOut",
       },
-      0.3,
+      0.3
     );
 
     return () => {
@@ -71,95 +71,91 @@ const ScrollHero: React.FC = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 filter blur-[150px] translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      {/* First content: "Canada's trusted Bitcoin ATM network" */}
-      <div
-        ref={firstTextRef}
-        className="absolute inset-0 flex flex-col items-center justify-center -mt-28"
-      >
-        {/* ATM Image with pill-shaped container positioned on top */}
-        <div className="h-[26rem] w-[16rem] md:h-[32rem] md:w-[20rem] lg:h-[36rem] lg:w-[22.5rem] relative flex-shrink-0 overflow-hidden rounded-full shadow-2xl z-10 mb-0">
-          {/* Gradient background effects */}
-          <div className="opacity-40">
-            <div className="absolute top-0 h-[70%] w-full bg-blue-600 blur-2xl contrast-125"></div>
-            <div className="absolute bottom-0 h-1/2 w-full bg-yellow-500 blur-2xl contrast-125"></div>
-          </div>
-          {/* Fade out effect for bottom half */}
-          <div className="absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-[#0a1320] via-[#0a1320]/80 to-transparent z-20"></div>
-          {/* ATM Image - positioned to show top half and hide bottom */}
-          <img
-            src="/atm-image.png"
-            alt="Bitcoin ATM"
-            className="absolute top-[15%] left-0 right-0 z-10 mx-auto h-[140%] w-auto object-cover"
-          />
-        </div>
-
-        {/* Text positioned to overlap bottom of image */}
-        <div className="text-center -mt-20 md:-mt-24 lg:-mt-28 relative z-30">
-          <h1
-            className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-            style={{ fontFamily: "SF Pro Display, sans-serif" }}
+      {/* Main content container with consistent vertical spacing */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="flex flex-col items-center max-w-[90vw]">
+          {/* First content: "Canada's trusted Bitcoin ATM network" */}
+          <div
+            ref={firstTextRef}
+            className="w-full flex flex-col items-center justify-center -mt-28"
           >
-            Canada's trusted Bitcoin
-            <br />
-            ATM network
-          </h1>
-        </div>
-      </div>
-
-      {/* Second content: "Buy Bitcoin in Minutes, Not Hours" */}
-      <div
-        ref={secondTextRef}
-        className="absolute inset-0 flex items-center justify-center"
-        style={{ opacity: 0 }}
-      >
-        <div className="relative text-center">
-          <h1
-            className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-            style={{ fontFamily: "SF Pro Display, sans-serif" }}
-          >
-            Buy Bitcoin
-            <span className="inline-block mx-4 align-middle w-36 h-36">
-              <CryptoModel3D
-                modelPath="/Bitcoin.glb"
-                className="w-full h-full"
+            {/* ATM Image with pill-shaped container positioned on top */}
+            <div className="h-[26rem] w-[16rem] md:h-[32rem] md:w-[20rem] lg:h-[36rem] lg:w-[22.5rem] relative flex-shrink-0 overflow-hidden rounded-full shadow-2xl z-10 mb-0">
+              {/* Gradient background effects */}
+              <div className="opacity-40">
+                <div className="absolute top-0 h-[70%] w-full bg-blue-600 blur-2xl contrast-125"></div>
+                <div className="absolute bottom-0 h-1/2 w-full bg-yellow-500 blur-2xl contrast-125"></div>
+              </div>
+              {/* Fade out effect for bottom half */}
+              <div className="absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-[#0a1320] via-[#0a1320]/80 to-transparent z-20"></div>
+              {/* ATM Image - positioned to show top half and hide bottom */}
+              <img
+                src="/atm-image.png"
+                alt="Bitcoin ATM"
+                className="absolute top-[15%] left-0 right-0 z-10 mx-auto h-[140%] w-auto object-cover"
               />
-            </span>
-            in{" "}
-            <span className="bg-gradient-to-r from-[#7fa1ff] via-[#a8c0ff] to-[#7fa1ff] bg-clip-text text-transparent font-medium">
-              Minutes
-            </span>
-            <br />
-            Not Hours
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 mt-16 max-w-2xl mx-auto leading-relaxed">
-            We're reimagining crypto trading to accelerate your success
-          </p>
+            </div>
+
+            {/* Text positioned to overlap bottom of image */}
+            <div className="text-center -mt-20 md:-mt-24 lg:-mt-28 relative z-30">
+              <h1
+                className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
+                style={{ fontFamily: "SF Pro Display, sans-serif" }}
+              >
+                Buy and sell digital assets
+                <br />
+                with HoneyBadger
+              </h1>
+            </div>
+          </div>
+
+          {/* Second content: "Buy Bitcoin in Minutes, Not Hours" */}
+          <div
+            ref={secondTextRef}
+            className="absolute inset-0 flex items-center justify-center"
+            style={{ opacity: 0 }}
+          >
+            <div className="relative text-center">
+              <h1
+                className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
+                style={{ fontFamily: "SF Pro Display, sans-serif" }}
+              >
+                Canada's choice for Bitcoin
+                <span className="inline-block ml-4 align-middle w-36 h-36">
+                  <CryptoModel3D
+                    modelPath="/Bitcoin.glb"
+                    className="w-full h-full"
+                  />
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 mt-16 max-w-2xl mx-auto leading-relaxed">
+                HoneyBadger makes it easy to buy Bitcoin, Ethereum, and Litecoin
+                online, at an ATM, or by phone.
+              </p>
+            </div>
+          </div>
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mt-16 relative z-30">
+            <a
+              href="#app"
+              className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
+              style={{ borderRadius: "50px" }}
+            >
+              Buy Online
+            </a>
+            <a
+              href="#find-atm"
+              className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
+              style={{
+                borderRadius: "50px",
+                background: "rgba(255, 255, 255, 0.05)",
+              }}
+            >
+              Find an ATM
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Buttons - Always visible */}
-      <div className="absolute inset-x-0 bottom-80 flex justify-center z-10">
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#app"
-            className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300"
-            style={{ borderRadius: "50px" }}
-          >
-            Buy Online
-          </a>
-          <a
-            href="#find-atm"
-            className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
-            style={{
-              borderRadius: "50px",
-              background: "rgba(255, 255, 255, 0.05)",
-            }}
-          >
-            Find an ATM
-          </a>
-        </div>
-      </div>
-
       {/* Stats and Logo Banner - Always visible at bottom */}
       <motion.div
         className="absolute bottom-4 left-0 right-0 py-4 px-4 sm:px-6 lg:px-8"
