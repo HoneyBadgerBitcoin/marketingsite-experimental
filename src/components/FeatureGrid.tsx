@@ -15,7 +15,8 @@ const features: Feature[] = [
     id: "security",
     category: "SECURITY",
     title: "Robust Security",
-    description: "Your security is our priority. We use encrypted systems, multi-factor authentication, and secure infrastructure to protect your assets and data.",
+    description:
+      "Your security is our priority. We use encrypted systems, multi-factor authentication, and secure infrastructure to protect your assets and data.",
     image: "/sq-blue-badger-shield.png",
     gradient: "#1a1d24",
   },
@@ -23,24 +24,27 @@ const features: Feature[] = [
     id: "checking",
     category: "PRODUCT UPDATE",
     title: "FINTRAC Compliance",
-    description: "Committed to legal and financial standards, we are registered with FINTRAC and Revenu Québec. We employ extensive KYC procedures.",
-    image: "/sq-credit.png",
+    description:
+      "Committed to legal and financial standards, we are registered with FINTRAC and Revenu Québec. We employ extensive KYC procedures.",
+    image: "/fintrac-1.png",
     gradient: "#1a1d24",
   },
   {
     id: "analytics",
     category: "MULTI-CHAIN",
     title: "Expert Support",
-    description: "Count on our team of experts to navigate buying and selling in the crypto landscape. Our team provides support within 24 hours.",
-    image: "/sq-charts.png",
+    description:
+      "Count on our team of experts to navigate buying and selling in the crypto landscape. Our team provides support within 24 hours.",
+    image: "/24h.png",
     gradient: "#1a1d24",
   },
   {
     id: "transfers",
     category: "DISCOVER",
     title: "Versatile Options",
-    description: "Transact your way online, at an ATM, or directly with our team. Choose from cash, wire transfers, and more.",
-    image: "/sq-acct-summary.png",
+    description:
+      "Transact your way online, at an ATM, or directly with our team. Choose from cash, wire transfers, and more.",
+    image: "/support-growth-clean.png",
     gradient: "#1a1d24",
   },
 ];
@@ -54,27 +58,33 @@ export default function FeatureGrid() {
   });
 
   return (
-    <section className="pt-20 pb-36 bg-[#080f18] relative overflow-hidden" ref={containerRef}>
+    <section
+      className="pt-20 pb-36 bg-[#080f18] relative overflow-hidden"
+      ref={containerRef}
+    >
       {/* Background gradient/lighting effect */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(1200px 600px at 50% 0%, rgba(37,99,235,0.15), transparent 70%)",
-          opacity: "0.85"
+          background:
+            "radial-gradient(1200px 600px at 50% 0%, rgba(37,99,235,0.15), transparent 70%)",
+          opacity: "0.85",
         }}
       ></div>
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(800px 400px at 50% 0%, rgba(59,130,246,0.1), transparent 70%)",
-          opacity: "0.75"
+          background:
+            "radial-gradient(800px 400px at 50% 0%, rgba(59,130,246,0.1), transparent 70%)",
+          opacity: "0.75",
         }}
       ></div>
       {/* Darken the rest of the background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.6) 100%)"
+          background:
+            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.6) 100%)",
         }}
       ></div>
 
@@ -99,8 +109,8 @@ export default function FeatureGrid() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Unlike traditional exchanges, we never hold your funds.
-            Your transfer directly to you, reducing risks and boosting security.
+            Unlike traditional exchanges, we never hold your funds. Your
+            transfer directly to you, reducing risks and boosting security.
           </motion.p>
         </div>
 
@@ -127,13 +137,16 @@ export default function FeatureGrid() {
                     className="w-full h-full object-cover"
                   />
                   {/* Subtle Gradient Mask Overlay */}
-                  <div 
-                    className="absolute inset-0" 
+                  <div
+                    className="absolute inset-0"
                     style={{
-                      maskImage: 'linear-gradient(to top, #000000 0%, transparent 100%)',
-                      WebkitMaskImage: 'linear-gradient(to top, #000000 0%, transparent 100%)',
-                      background: 'linear-gradient(to top, rgba(26,29,36,0.95) 0%, transparent 100%)',
-                      opacity: 0.9
+                      maskImage:
+                        "linear-gradient(to top, #000000 0%, transparent 100%)",
+                      WebkitMaskImage:
+                        "linear-gradient(to top, #000000 0%, transparent 100%)",
+                      background:
+                        "linear-gradient(to top, rgba(26,29,36,0.95) 0%, transparent 100%)",
+                      opacity: 0.9,
                     }}
                   />
                 </div>
@@ -142,7 +155,7 @@ export default function FeatureGrid() {
               {/* Content Container */}
               <div className="relative h-full flex flex-col justify-end p-8 z-10">
                 {/* Bottom Section - Text */}
-                <div className="space-y-2" style={{ userSelect: 'text' }}>
+                <div className="space-y-2" style={{ userSelect: "text" }}>
                   <h3 className="text-lg font-bold text-white leading-snug">
                     {feature.title}
                   </h3>
