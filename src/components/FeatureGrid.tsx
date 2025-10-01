@@ -14,32 +14,32 @@ const features: Feature[] = [
   {
     id: "security",
     category: "SECURITY",
-    title: "The crypto platform thousands of traders trust.",
-    description: "Your security is our priority. We use encrypted systems, multi-factor authentication, and secure infrastructure to protect your assets.",
+    title: "Robust Security",
+    description: "Your security is our priority. We use encrypted systems, multi-factor authentication, and secure infrastructure to protect your assets and data.",
     image: "/sq-blue-badger-shield.png",
     gradient: "#1a1d24",
   },
   {
     id: "checking",
     category: "PRODUCT UPDATE",
-    title: "Set and edit your recurring buys",
-    description: "Dollar-cost averaging (DCA) just got easier. Automate your crypto purchases with flexible recurring buy options.",
+    title: "FINTRAC Compliance",
+    description: "Committed to legal and financial standards, we are registered with FINTRAC and Revenu Québec. We employ extensive KYC procedures.",
     image: "/sq-credit.png",
     gradient: "#1a1d24",
   },
   {
     id: "analytics",
     category: "MULTI-CHAIN",
-    title: "More coins. More networks. More choices.",
-    description: "Get real-time spending insights and financial trends for each of your accounts with comprehensive analytics.",
+    title: "Expert Support",
+    description: "Count on our team of experts to navigate buying and selling in the crypto landscape. Our team provides support within 24 hours.",
     image: "/sq-charts.png",
     gradient: "#1a1d24",
   },
   {
     id: "transfers",
     category: "DISCOVER",
-    title: "Earn crypto rewards with Newton's staking feature.",
-    description: "Auto top-up when balance is low. Virtual accounts for better tracking. Custom user controls and permissions.",
+    title: "Versatile Options",
+    description: "Transact your way online, at an ATM, or directly with our team. Choose from cash, wire transfers, and more.",
     image: "/sq-acct-summary.png",
     gradient: "#1a1d24",
   },
@@ -87,10 +87,11 @@ export default function FeatureGrid() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            Everything you need to{" "}
+            Canada's{" "}
             <span className="bg-gradient-to-r from-[#7fa1ff] via-white to-[#7fa1ff] bg-clip-text text-transparent">
-              trade crypto
-            </span>
+              #1 noncustodial
+            </span>{" "}
+            digital asset platform
           </motion.h2>
           <motion.p
             className="text-xl text-white/80 max-w-3xl mx-auto px-6"
@@ -98,7 +99,8 @@ export default function FeatureGrid() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Powerful features designed to make buying and selling cryptocurrency simple, secure, and efficient
+            Unlike traditional exchanges, we never hold your funds.
+            Your transfer directly to you, reducing risks and boosting security.
           </motion.p>
         </div>
 
@@ -110,7 +112,7 @@ export default function FeatureGrid() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer"
+              className="group relative overflow-hidden rounded-3xl transition-all duration-500"
               style={{
                 minHeight: "500px",
                 backgroundColor: feature.gradient,
@@ -140,7 +142,7 @@ export default function FeatureGrid() {
               {/* Content Container */}
               <div className="relative h-full flex flex-col justify-end p-8 z-10">
                 {/* Bottom Section - Text */}
-                <div className="space-y-2">
+                <div className="space-y-2" style={{ userSelect: 'text' }}>
                   <h3 className="text-lg font-bold text-white leading-snug">
                     {feature.title}
                   </h3>
