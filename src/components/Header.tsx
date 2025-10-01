@@ -35,9 +35,8 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const heroHeight = window.innerHeight; // Hero section is full viewport height
-      // Only become opaque when actually leaving the hero section
-      setIsScrolled(scrollPosition > heroHeight * 2.0); // Trigger after parallax completes
+      // Become opaque as soon as user starts scrolling
+      setIsScrolled(scrollPosition > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -90,17 +89,18 @@ const buyItems = [
         transition={{ duration: 0.5 }}
         className={`fixed top-0 w-full text-gray-200 z-50 transition-all duration-700 ease-in-out ${
           isScrolled 
-            ? 'bg-[#141a1f] shadow-lg' 
+            ? 'bg-[rgb(8,8,10)] shadow-lg' 
             : 'bg-transparent'
+        }
         }`}
         onMouseLeave={() => setOpenDropdown(null)}
       >
       <div className="container-custom">
-        <nav className="flex items-center justify-between h-20">
+        <nav className="flex items-center justify-between h-14 lg:h-16">
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img src="/logo-white.png" alt="HoneyBadger" className="h-11 w-auto" />
+              <img src="/logo-white.png" alt="HoneyBadger" className="h-8 lg:h-9 w-auto" />
             </a>
           </div>
 
@@ -210,7 +210,7 @@ const buyItems = [
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           className={`md:hidden border-t border-gray-800/50 text-gray-200 transition-colors duration-700 ease-in-out ${
-            isScrolled ? 'bg-[#141a1f]' : 'bg-transparent'
+            isScrolled ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
           }`}
         >
           <div className="container-custom py-4">
@@ -331,11 +331,11 @@ const buyItems = [
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
           className={`absolute left-0 right-0 text-gray-200 transition-colors duration-700 ease-in-out ${
-            isScrolled ? 'bg-[#141a1f]' : 'bg-transparent'
+            isScrolled ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
           }`}
           style={{ 
             borderRadius: 0,
-            top: '79px' // Overlap by 1px to eliminate any gap
+            top: '55px' // Overlap by 1px to eliminate any gap
           }}
         >
           <div className="container-custom py-8">
