@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.tsx';
 import ScrollHero from '../components/ScrollHero.tsx';
-import TabServices from '../components/TabServices.tsx';
+import ServicesSection from "../components/ServicesSection";
 import FeaturesAndReviews from '../components/FeaturesAndReviews.tsx';
 import Insights from '../components/Insights.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro';
       
       <!-- Services Section - Clean white background -->
       <section class="bg-white">
-        <TabServices client:load />
+    <ServicesSection />
       </section>
       
       <!-- Features Grid and Reviews Carousel -->
