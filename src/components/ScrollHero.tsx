@@ -1,59 +1,41 @@
-import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import CryptoModel3D from "./CryptoModel3D";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ScrollHero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const firstTextRef = useRef<HTMLDivElement>(null);
-  const secondTextRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!heroRef.current) return;
+  // Track scroll progress through the hero section
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
 
-    // Set initial state for second text content
-    gsap.set(secondTextRef.current, { opacity: 0 });
+  // Text crossfade: First text fades out 0-12%, second text fades in 8-18% (very fast)
+  const firstTextOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
+  const secondTextOpacity = useTransform(scrollYProgress, [0.08, 0.18], [0, 1]);
 
-    // Create the main timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top top",
-        end: "+=200%",
-        scrub: 0.5,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
+  // ATM capsule transforms: scale down and move up (very fast)
+  const capsuleScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.8]);
+  const capsuleY = useTransform(scrollYProgress, [0, 0.15], [0, -60]);
 
-    // Crossfade between text contents
-    tl.to(firstTextRef.current, {
-      opacity: 0,
-      duration: 0.5,
-      ease: "power2.inOut",
-    }).to(
-      secondTextRef.current,
-      {
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.inOut",
-      },
-      0.3
-    );
+  // Text overlap with capsule: increase negative margin to condense (very fast)
+  const textMarginTop = useTransform(
+    scrollYProgress,
+    [0, 0.15],
+    [-80, -140] // more overlap
+  );
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  // Buttons: only reduce top margin, don't move them up
+  const buttonsMarginTop = useTransform(scrollYProgress, [0, 0.15], [64, 32]);
+
+  // Stats/logos section: move up to close gap with buttons (reduced to prevent overlap)
+  const statsY = useTransform(scrollYProgress, [0, 0.15], [0, -100]);
 
   return (
-    <div
+    <motion.div
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1320] to-[#1a2332] overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-[#0a1320] overflow-hidden !rounded-none"
     >
       {/* Background pattern overlay */}
       <div className="absolute inset-0 opacity-10">
@@ -75,12 +57,15 @@ const ScrollHero: React.FC = () => {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="flex flex-col items-center max-w-[90vw]">
           {/* First content: "Canada's trusted Bitcoin ATM network" */}
-          <div
-            ref={firstTextRef}
+          <motion.div
+            style={{ opacity: firstTextOpacity }}
             className="w-full flex flex-col items-center justify-center -mt-28"
           >
             {/* ATM Image with pill-shaped container positioned on top */}
-            <div className="h-[26rem] w-[16rem] md:h-[32rem] md:w-[20rem] lg:h-[36rem] lg:w-[22.5rem] relative flex-shrink-0 overflow-hidden rounded-full shadow-2xl z-10 mb-0">
+            <motion.div
+              style={{ scale: capsuleScale, y: capsuleY }}
+              className="h-[26rem] w-[16rem] md:h-[32rem] md:w-[20rem] lg:h-[36rem] lg:w-[22.5rem] relative flex-shrink-0 overflow-hidden rounded-full shadow-2xl z-10 mb-0"
+            >
               {/* Gradient background effects */}
               <div className="opacity-40">
                 <div className="absolute top-0 h-[70%] w-full bg-blue-600 blur-2xl contrast-125"></div>
@@ -94,10 +79,13 @@ const ScrollHero: React.FC = () => {
                 alt="Bitcoin ATM"
                 className="absolute top-[15%] left-0 right-0 z-10 mx-auto h-[140%] w-auto object-cover"
               />
-            </div>
+            </motion.div>
 
             {/* Text positioned to overlap bottom of image */}
-            <div className="text-center -mt-20 md:-mt-24 lg:-mt-28 relative z-30">
+            <motion.div
+              style={{ marginTop: textMarginTop }}
+              className="text-center relative z-30"
+            >
               <h1
                 className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
                 style={{ fontFamily: "SF Pro Display, sans-serif" }}
@@ -106,14 +94,13 @@ const ScrollHero: React.FC = () => {
                 <br />
                 with HoneyBadger
               </h1>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Second content: "Buy Bitcoin in Minutes, Not Hours" */}
-          <div
-            ref={secondTextRef}
+          <motion.div
+            style={{ opacity: secondTextOpacity }}
             className="absolute inset-0 flex items-center justify-center"
-            style={{ opacity: 0 }}
           >
             <div className="relative text-center">
               <h1
@@ -133,9 +120,12 @@ const ScrollHero: React.FC = () => {
                 online, at an ATM, or by phone.
               </p>
             </div>
-          </div>
+          </motion.div>
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mt-16 relative z-30">
+          <motion.div
+            style={{ marginTop: buttonsMarginTop }}
+            className="flex flex-col sm:flex-row gap-4 justify-center px-4 relative z-30"
+          >
             <a
               href="#app"
               className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
@@ -153,21 +143,20 @@ const ScrollHero: React.FC = () => {
             >
               Find an ATM
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* Stats and Logo Banner - Always visible at bottom */}
       <motion.div
+        style={{ y: statsY }}
         className="absolute bottom-4 left-0 right-0 py-4 px-4 sm:px-6 lg:px-8"
-        style={{ background: "none", backgroundColor: "transparent" }}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <div
-          className="max-w-7xl mx-auto"
-          style={{ background: "none", backgroundColor: "transparent" }}
-        >
+        <div className="max-w-7xl mx-auto">
+          {/* Subtle divider line */}
+          <div className="h-px w-full bg-white/10 mb-4"></div>
           <div
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
             style={{ background: "none", backgroundColor: "transparent" }}
@@ -323,7 +312,7 @@ const ScrollHero: React.FC = () => {
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

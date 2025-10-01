@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.tsx';
 import ScrollHero from '../components/ScrollHero.tsx';
 import TabServices from '../components/TabServices.tsx';
-import EnterpriseCrypto from '../components/EnterpriseCrypto.astro';
+import FeaturesAndReviews from '../components/FeaturesAndReviews.tsx';
 import Insights from '../components/Insights.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
 import Footer from '../components/Footer.astro';
@@ -20,15 +20,13 @@ import Footer from '../components/Footer.astro';
         <TabServices client:load />
       </section>
       
-      <!-- Built for crypto at scale - Combined Features, Stats & Reviews -->
+      <!-- Features Grid and Reviews Carousel -->
       <section style="background-color: #000000;">
-        <EnterpriseCrypto />
+        <FeaturesAndReviews client:load />
       </section>
       
       <!-- Insights - Professional gray background -->
-      <section class="section-mint section-padding">
-        <Insights />
-      </section>
+      <Insights />
     </main>
     
     <!-- Full-width Newsletter CTA Section -->

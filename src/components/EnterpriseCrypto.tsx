@@ -193,7 +193,7 @@ const EnterpriseCrypto = () => {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(900px 500px at 20% 80%, rgba(2,78,179,0.35), transparent 60%), radial-gradient(800px 420px at 90% 30%, rgba(61,127,255,0.35), transparent 60%), radial-gradient(1200px 600px at 50% 0%, rgba(2,51,119,0.35), transparent 70%)",
+            "radial-gradient(1200px 600px at 50% 0%, rgba(2,51,119,0.35), transparent 70%)",
         }}
       ></div>
 

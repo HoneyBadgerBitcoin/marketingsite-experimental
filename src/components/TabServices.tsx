@@ -78,210 +78,146 @@ const tabContents: TabContent[] = [
 ];
 
 export default function TabServices() {
-  const [activeTab, setActiveTab] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
-  const currentContent = tabContents[activeTab];
-
-  // Auto-switch tabs
-  useEffect(() => {
-    if (!isPaused) {
-      intervalRef.current = setInterval(() => {
-        setActiveTab((prev) => (prev + 1) % tabContents.length);
-      }, 12000); // Switch every 12 seconds
-    }
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [isPaused, tabContents.length]);
-
-  const handleTabClick = (index: number) => {
-    setActiveTab(index);
-    setIsPaused(true);
-
-    // Resume after 90 seconds of inactivity
-    setTimeout(() => {
-      setIsPaused(false);
-    }, 90000);
-  };
-
-  const handleContentHover = () => {
-    setIsPaused(true);
-  };
-
-  const handleContentLeave = () => {
-    setIsPaused(false);
-  };
-
-  // Preload images to prevent jumping
-  useEffect(() => {
-    tabContents.forEach((tab) => {
-      if (tab.media.type === "image") {
-        const img = new Image();
-        img.src = tab.media.src;
-      }
-    });
-  }, []);
-
   return (
-    <section className="py-28 md:py-36 bg-white">
+    <section className="py-28 md:py-36 bg-[#0a1320]">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl text-white mb-4">
             Explore what's possible
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Choose the perfect way to buy cryptocurrency that fits your needs
           </p>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="relative inline-flex bg-gray-50 p-1 pr-2">
-            {/* Sliding pill indicator */}
-            <motion.div
-              className="absolute h-[calc(100%-8px)] bg-white shadow-lg"
-              initial={false}
-              animate={{
-                x: activeTab === 0 ? 0 : activeTab === 1 ? 158 : 316,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 30,
-              }}
-              style={{
-                width: "156px",
-                top: "4px",
-                left: "4px",
-              }}
-            />
-
-            {tabContents.map((tab, index) => (
-              <button
-                key={tab.id}
-                onMouseEnter={() => handleTabClick(index)}
-                onClick={() => handleTabClick(index)}
-                className={`
-                  relative z-10 px-8 py-3 text-lg font-medium transition-colors duration-200 whitespace-nowrap
-                  ${
-                    activeTab === index
-                      ? "text-accent-600"
-                      : "text-gray-600 hover:text-gray-900"
-                  }
-                `}
-                style={{ width: "156px" }}
-              >
-                {tab.title}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Tab Content */}
-        <div className="max-w-6xl mx-auto">
-          <div className="relative min-h-[680px] md:min-h-[720px]">
-            {tabContents.map((content, index) => (
-              <div
-                key={content.id}
-                className={`absolute inset-0 grid lg:grid-cols-2 gap-48 items-stretch transition-opacity duration-300 ${
-                  activeTab === index
-                    ? "opacity-100 pointer-events-auto"
-                    : "opacity-0 pointer-events-none"
-                }`}
-                onMouseEnter={handleContentHover}
-                onMouseLeave={handleContentLeave}
-              >
-                {/* Text Content */}
-                <div className="flex items-start">
-                  <div className="flex flex-col w-full">
-                    <h3 className="text-3xl text-gray-900 mb-6">
-                      {content.heading}
-                    </h3>
-                    <p className="text-base text-gray-600 mb-4 md:mb-6">
-                      {content.description}
-                    </p>
-
-                    {content.highlights && (
-                      <div className="flex flex-wrap gap-3 mt-2 mb-2">
-                        {content.highlights.map((h, i) => (
-                          <span
-                            key={`${content.id}-highlight-${i}`}
-                            className="px-3 py-1 bg-accent-50 text-accent-700 text-sm font-medium"
-                          >
-                            {h}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    <div className="space-y-5 md:space-y-6 mt-8 mb-10">
-                      {content.features.map((feature, featureIndex) => (
-                        <div
-                          key={`${content.id}-${featureIndex}`}
-                          className="flex items-start gap-4"
-                        >
-                          <div className="w-6 h-6 bg-accent-600 flex items-center justify-center flex-shrink-0 mt-1">
-                            <svg
-                              className="w-4 h-4 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                          <p className="text-base text-gray-700">{feature}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {content.id === "find-atm" ? (
-                      <a href="/find-atm" className="btn-primary mt-6 md:mt-8">
-                        {content.ctaText} →
-                      </a>
-                    ) : (
-                      <a href="#" className="btn-primary mt-6 md:mt-8">
-                        {content.ctaText} →
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Media Content */}
-                <div className="relative flex items-start">
-                  <div className="h-[520px] md:h-[560px] w-full overflow-hidden shadow-xl">
-                    {content.media.type === "map" ? (
-                      <ATMMapWrapper />
-                    ) : content.media.type === "video" ? (
-                      <video
-                        src={content.media.src}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover"
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    ) : (
-                      <img
-                        src={content.media.src}
-                        alt={content.media.alt}
-                        className="w-full h-full object-cover"
-                        loading="eager"
-                      />
-                    )}
-                  </div>
-                </div>
+        <div className="max-w-6xl mx-auto space-y-4">
+          {/* Buy Online Block */}
+          <div 
+            className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
+            style={{
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%), url(/noise-background.png)',
+              backgroundBlendMode: 'normal, overlay',
+            }}
+          >
+            <div className="relative z-10 flex gap-8">
+              <div className="flex items-center relative min-w-[200px] p-4">
+                <h3 className="text-3xl font-bold text-white whitespace-nowrap">
+                  Buy<br />
+                  <span className="relative inline-block">
+                    Online
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-accent-400/60"></div>
+                  </span>
+                </h3>
               </div>
-            ))}
+              <div className="flex flex-col gap-4">
+                <p className="text-gray-300">
+                  <span className="font-semibold text-white">Buy Bitcoin & Crypto Online</span> — Get instant access to Bitcoin, Ethereum, Litecoin with our secure online platform. Buy, sell, and trade crypto with competitive fees and 24/7 support.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                  BTC, ETH, LTC
+                </span>
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                  CAD e-Transfer
+                </span>
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                  Trusted by 60,000+
+                </span>
+              </div>
+              <div className="mt-2">
+                <a href="#" className="inline-flex items-center text-accent-400 hover:text-accent-300 font-medium transition-colors">
+                  Learn More →
+                </a>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Find an ATM Block */}
+          <div 
+            className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
+            style={{
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%), url(/noise-background.png)',
+              backgroundBlendMode: 'normal, overlay',
+            }}
+          >
+            <div className="relative z-10 flex gap-8">
+              <div className="flex items-center relative min-w-[200px] p-4">
+                <h3 className="text-3xl font-bold text-white whitespace-nowrap">
+                  Find an<br />
+                  <span className="relative inline-block">
+                    ATM
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-amber-400/60"></div>
+                  </span>
+                </h3>
+              </div>
+              <div className="flex flex-col gap-4">
+                <p className="text-gray-300">
+                  <span className="font-semibold text-white">Find a Bitcoin ATM Near You</span> — Access our network of Bitcoin ATMs across Canada. Buy and sell crypto with cash at convenient locations near you.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-3 py-1.5 bg-white/5 text-amber-300 text-sm font-medium rounded-md border border-white/10">
+                  Cash purchases
+                </span>
+                <span className="px-3 py-1.5 bg-white/5 text-amber-300 text-sm font-medium rounded-md border border-white/10">
+                  Near you
+                </span>
+                <span className="px-3 py-1.5 bg-white/5 text-amber-300 text-sm font-medium rounded-md border border-white/10">
+                  Quick and easy
+                </span>
+              </div>
+              <div className="mt-2">
+                <a href="/find-atm" className="inline-flex items-center text-amber-400 hover:text-amber-300 font-medium transition-colors">
+                  Learn More →
+                </a>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          {/* OTC Desk Block */}
+          <div 
+            className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
+            style={{
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%), url(/noise-background.png)',
+              backgroundBlendMode: 'normal, overlay',
+            }}
+          >
+            <div className="relative z-10 flex gap-8">
+              <div className="flex items-center relative min-w-[200px] p-4">
+                <h3 className="text-3xl font-bold text-white whitespace-nowrap">
+                  OTC<br />
+                  <span className="relative inline-block">
+                    Desk
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-emerald-400/60"></div>
+                  </span>
+                </h3>
+              </div>
+              <div className="flex flex-col gap-4">
+                <p className="text-gray-300">
+                  <span className="font-semibold text-white">Personalized Crypto Assistance</span> — New to crypto? Our expert team provides personalized guidance through your first purchase and beyond.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-3 py-1.5 bg-white/5 text-emerald-300 text-sm font-medium rounded-md border border-white/10">
+                  1:1 guidance
+                </span>
+                <span className="px-3 py-1.5 bg-white/5 text-emerald-300 text-sm font-medium rounded-md border border-white/10">
+                  Human support
+                </span>
+                <span className="px-3 py-1.5 bg-white/5 text-emerald-300 text-sm font-medium rounded-md border border-white/10">
+                  Secure onboarding
+                </span>
+              </div>
+              <div className="mt-2">
+                <a href="#" className="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium transition-colors">
+                  Learn More →
+                </a>
+              </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
