@@ -57,8 +57,8 @@ const tabContents: TabContent[] = [
     },
   },
   {
-    id: "guided-purchase",
-    title: "Guided Purchase",
+    id: "otc-desk",
+    title: "OTC Desk",
     heading: "Personalized Crypto Assistance",
     description:
       "Making a large purchase or want dedicated support? Connect with our team for a secure, personalized experience built around you.",
@@ -179,7 +179,7 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          {/* Guided Purchase Block */}
+          {/* OTC Desk Block */}
           <div 
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
@@ -192,9 +192,9 @@ export default function ServicesSection() {
             <div className="relative z-10 flex gap-8">
               <div className="flex items-center relative min-w-[200px] p-4">
                 <h3 className="text-3xl font-bold text-white whitespace-nowrap">
-                  Guided<br />
+                  OTC<br />
                   <span className="relative inline-block">
-                    Purchase
+                    Desk
                     <div className="absolute left-0 -bottom-2 w-full h-1 bg-emerald-400/60"></div>
                   </span>
                 </h3>
