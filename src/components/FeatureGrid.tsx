@@ -110,7 +110,7 @@ export default function FeatureGrid() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             Unlike traditional exchanges, we never hold your funds. Your
-            transfer directly to you, reducing risks and boosting security.
+            transfer goes directly to you, reducing risks and maximizing security.
           </motion.p>
         </div>
 
