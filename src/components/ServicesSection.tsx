@@ -95,9 +95,10 @@ export default function ServicesSection() {
           <div 
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
-              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%), url(/noise-background.png)',
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-silver.png)',
               backgroundBlendMode: 'normal, overlay',
+              backgroundSize: 'cover',
             }}
           >
             <div className="relative z-10 flex gap-8">
@@ -138,9 +139,10 @@ export default function ServicesSection() {
           <div 
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
-              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%), url(/noise-background.png)',
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-gold.png)',
               backgroundBlendMode: 'normal, overlay',
+              backgroundSize: 'cover',
             }}
           >
             <div className="relative z-10 flex gap-8">
@@ -181,9 +183,10 @@ export default function ServicesSection() {
           <div 
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
-              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.95) 0%, rgba(15, 25, 40, 0.95) 50%, rgba(10, 19, 32, 0.95) 100%), url(/noise-background.png)',
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-black.png)',
               backgroundBlendMode: 'normal, overlay',
+              backgroundSize: 'cover',
             }}
           >
             <div className="relative z-10 flex gap-8">
