@@ -87,8 +87,8 @@ const buyItems = [
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className={`fixed top-0 w-full text-gray-200 z-50 transition-all duration-700 ease-in-out ${
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className={`fixed top-0 w-full text-gray-200 z-50 transition-all duration-200 ease-out ${
           isScrolled 
             ? 'bg-[rgb(8,8,10)] shadow-lg' 
             : (isHovered ? 'bg-[rgb(8,8,10)] shadow-lg' : 'bg-transparent')
@@ -214,7 +214,7 @@ const buyItems = [
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className={`md:hidden border-t border-gray-800/50 text-gray-200 transition-colors duration-700 ease-in-out ${
+          className={`md:hidden border-t border-gray-800/50 text-gray-200 transition-colors duration-200 ease-out ${
             isScrolled || isHovered ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
           }`}
         >
@@ -335,7 +335,7 @@ const buyItems = [
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className={`absolute left-0 right-0 text-gray-200 transition-colors duration-700 ease-in-out ${
+          className={`absolute left-0 right-0 text-gray-200 transition-colors duration-200 ease-out ${
             isScrolled || isHovered ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
           }`}
           style={{ 
