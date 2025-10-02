@@ -27,6 +27,7 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   
   // Single state for which dropdown is open
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -90,10 +91,14 @@ const buyItems = [
         className={`fixed top-0 w-full text-gray-200 z-50 transition-all duration-700 ease-in-out ${
           isScrolled 
             ? 'bg-[rgb(8,8,10)] shadow-lg' 
-            : 'bg-transparent'
+            : (isHovered ? 'bg-[rgb(8,8,10)] shadow-lg' : 'bg-transparent')
         }
         }`}
-        onMouseLeave={() => setOpenDropdown(null)}
+        onMouseEnter={() => { if (!isScrolled) setIsHovered(true); }}
+        onMouseLeave={() => {
+          setOpenDropdown(null);
+          if (!isScrolled) setIsHovered(false);
+        }}
       >
       <div className="container-custom">
         <nav className="flex items-center justify-between h-14 lg:h-16">
@@ -210,7 +215,7 @@ const buyItems = [
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           className={`md:hidden border-t border-gray-800/50 text-gray-200 transition-colors duration-700 ease-in-out ${
-            isScrolled ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
+            isScrolled || isHovered ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
           }`}
         >
           <div className="container-custom py-4">
@@ -331,7 +336,7 @@ const buyItems = [
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
           className={`absolute left-0 right-0 text-gray-200 transition-colors duration-700 ease-in-out ${
-            isScrolled ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
+            isScrolled || isHovered ? 'bg-[rgb(8,8,10)]' : 'bg-transparent'
           }`}
           style={{ 
             borderRadius: 0,
