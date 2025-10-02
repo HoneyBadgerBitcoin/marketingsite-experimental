@@ -11,9 +11,9 @@ const ScrollHero: React.FC = () => {
     offset: ["start start", "end start"],
   });
 
-  // Text crossfade: First text fades out 0-12%, second text fades in 8-18% (very fast)
-  const firstTextOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
-  const secondTextOpacity = useTransform(scrollYProgress, [0.08, 0.18], [0, 1]);
+  // Text crossfade: First text starts at 1, fades to 0, second starts at 0, fades to 1
+  const firstTextOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const secondTextOpacity = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
 
   // ATM capsule transforms: scale down and move up (very fast)
   const capsuleScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.8]);
@@ -56,9 +56,10 @@ const ScrollHero: React.FC = () => {
       {/* Main content container with consistent vertical spacing */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="flex flex-col items-center max-w-[90vw]">
-          {/* First content: "Canada's trusted Bitcoin ATM network" */}
+          {/* First content: "Buy and sell digital assets" */}
           <motion.div
             style={{ opacity: firstTextOpacity }}
+            initial={{ opacity: 1 }}
             className="w-full flex flex-col items-center justify-center -mt-28"
           >
             {/* ATM Image with pill-shaped container positioned on top */}
@@ -97,9 +98,12 @@ const ScrollHero: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Second content: "Buy Bitcoin in Minutes, Not Hours" */}
+          {/* Second content: "Canada's choice for Bitcoin" */}
           <motion.div
-            style={{ opacity: secondTextOpacity }}
+            style={{ 
+              opacity: secondTextOpacity,
+              pointerEvents: scrollYProgress.get() > 0.1 ? 'auto' : 'none'
+            }}
             className="absolute inset-0 flex items-center justify-center"
           >
             <div className="relative text-center">
@@ -112,6 +116,7 @@ const ScrollHero: React.FC = () => {
                   <CryptoModel3D
                     modelPath="/Bitcoin.glb"
                     className="w-full h-full"
+                    opacity={secondTextOpacity}
                   />
                 </span>
               </h1>
