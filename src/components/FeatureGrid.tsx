@@ -35,7 +35,7 @@ const features: Feature[] = [
     title: "Expert Support",
     description:
       "Count on our team of experts to navigate buying and selling in the crypto landscape. Our team provides support within 24 hours.",
-    image: "/24h.png",
+    image: "/24h-blue.png",
     gradient: "#1a1d24",
   },
   {
@@ -44,7 +44,7 @@ const features: Feature[] = [
     title: "Versatile Options",
     description:
       "Transact your way online, at an ATM, or directly with our team. Choose from cash, wire transfers, and more.",
-    image: "/support-growth-clean.png",
+    image: "/support-growth-super-blue.png",
     gradient: "#1a1d24",
   },
 ];
