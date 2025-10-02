@@ -42,11 +42,11 @@ const tabContents: TabContent[] = [
     title: "Buy at an ATM",
     heading: "Find a Bitcoin ATM Near You",
     description:
-Find the nearest ATM from our network of 230+ machines
+      "Find the nearest ATM from our network of 230+ machines",
     features: [
       "230+ ATM locations nationwide",
       "Buy with cash instantly",
-      "No KYC for transactions under $1000",
+      "No KYC for transactions under $1000"
     ],
     highlights: ["Cash purchases", "Near you", "Quick and easy"],
     ctaText: "Locate ATM",
