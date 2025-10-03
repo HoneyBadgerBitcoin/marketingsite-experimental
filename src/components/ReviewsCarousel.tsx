@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -8,81 +8,71 @@ interface Testimonial {
   author: string;
   source: string;
   avatar: string;
-  rating: number;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    text: "Very happy how much easier it is to transfer money via e-transfer. I've tried three other apps and by far this one will be the one I'm using long term. Other apps took 3-5 days to transfer funds. Never longer then 2 hours money is ready to trade!",
+    text: "Very happy how much easier it is to transfer money via e-transfer. Other apps took days, but with HoneyBadger it's ready in 2 hours!",
     author: "benjamenj sbent",
     source: "Apple App Store",
-    avatar: "https://ui-avatars.com/api/?name=BS&background=7fa1ff&color=fff",
-    rating: 4,
+    avatar: "https://ui-avatars.com/api/?name=BS&background=3d7fff&color=fff",
   },
   {
     id: 2,
     text: "Love this app, was recommended it by both a family member and personal friends of mine to use Newton and I can't find any Cons, just Pros.",
     author: "Ali Boombaye",
     source: "Apple App Store",
-    avatar: "https://ui-avatars.com/api/?name=AB&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=AB&background=3d7fff&color=fff",
   },
   {
     id: 3,
     text: "Very well set up, for ease of depositing, transfering and trading crypto. The app is beatifully designed for maximum esthetics. security of the login process is top notch. If this app was a person, I would ask him/her to marry me!",
     author: "Reid Hosking",
     source: "Google Play Store",
-    avatar: "https://ui-avatars.com/api/?name=RH&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=RH&background=3d7fff&color=fff",
   },
   {
     id: 4,
     text: "One of the only Canadian options. Great customer service. And the app is easy to use. Never given me issues yet.",
     author: "joe stone",
     source: "Google Play Store",
-    avatar: "https://ui-avatars.com/api/?name=JS&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=JS&background=3d7fff&color=fff",
   },
   {
     id: 5,
     text: "Life is like a sandwich, no matter how you flip it, the bread comes first. Thank you for a platform to help me get it! 🍞",
     author: "Costa prava",
     source: "Apple App Store",
-    avatar: "https://ui-avatars.com/api/?name=CP&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=CP&background=3d7fff&color=fff",
   },
   {
     id: 6,
     text: "Very nice, clean interface for anyone just getting into crypto this is a great place to start.",
     author: "Jonathan Watts",
     source: "Google Play Store",
-    avatar: "https://ui-avatars.com/api/?name=JW&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=JW&background=3d7fff&color=fff",
   },
   {
     id: 7,
     text: "This Is Definitely One of the Best Exchanges For Canadians. Very Simple and easy! If people have problems with it, it must because you're doing something wrong.",
     author: "Dendvwg",
     source: "Apple App Store",
-    avatar: "https://ui-avatars.com/api/?name=DV&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=DV&background=3d7fff&color=fff",
   },
   {
     id: 8,
     text: "Love the new app! Makes it's so much easier for newbies like me to trade crypto!",
     author: "@MoAlkhooly",
     source: "Twitter",
-    avatar: "https://ui-avatars.com/api/?name=MA&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=MA&background=3d7fff&color=fff",
   },
   {
     id: 9,
     text: "Much Wow. Such Good",
     author: "Jeshua Williams",
     source: "Apple App Store",
-    avatar: "https://ui-avatars.com/api/?name=JW&background=7fa1ff&color=fff",
-    rating: 5,
+    avatar: "https://ui-avatars.com/api/?name=JW&background=3d7fff&color=fff",
   },
 ];
 
@@ -210,20 +200,6 @@ export default function ReviewsCarousel() {
                     <p className="text-white/80 text-base leading-relaxed mb-6 flex-grow line-clamp-4">
                       {testimonial.text}
                     </p>
-
-                    {/* Rating */}
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-5 h-5 ${
-                            i < testimonial.rating
-                              ? "text-blue-400 fill-blue-400"
-                              : "text-white/20"
-                          }`}
-                        />
-                      ))}
-                    </div>
 
                     {/* Author Info */}
                     <div className="flex items-center gap-3 pt-4 border-t border-white/10">
