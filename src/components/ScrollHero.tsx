@@ -12,25 +12,25 @@ const ScrollHero: React.FC = () => {
   });
 
   // Text crossfade: First text starts at 1, fades to 0, second starts at 0, fades to 1
-  const firstTextOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const secondTextOpacity = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
+  const firstTextOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const secondTextOpacity = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
 
   // ATM capsule transforms: scale down and move up (very fast)
-  const capsuleScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.8]);
-  const capsuleY = useTransform(scrollYProgress, [0, 0.15], [0, -60]);
+  const capsuleScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.8]);
+  const capsuleY = useTransform(scrollYProgress, [0, 0.1], [0, -60]);
 
   // Text overlap with capsule: increase negative margin to condense (very fast)
   const textMarginTop = useTransform(
     scrollYProgress,
     [0, 0.15],
-    [-80, -140] // more overlap
+    [0, 0] // keep text position fixed
   );
 
   // Buttons: only reduce top margin, don't move them up
-  const buttonsMarginTop = useTransform(scrollYProgress, [0, 0.15], [64, 32]);
+  const buttonsMarginTop = useTransform(scrollYProgress, [0, 0.1], [16, 8]);
 
   // Stats/logos section: move up to close gap with buttons (reduced to prevent overlap)
-  const statsY = useTransform(scrollYProgress, [0, 0.15], [0, -100]);
+  const statsY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);
 
   return (
     <motion.div
@@ -63,19 +63,41 @@ const ScrollHero: React.FC = () => {
             className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 -mt-28"
           >
             {/* Text content on the left */}
-            <motion.div
-              style={{ marginTop: textMarginTop }}
-              className="flex-1 text-center lg:text-left relative z-30"
-            >
-              <h1
-                className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-                style={{ fontFamily: "SF Pro Display, sans-serif" }}
+            <div className="flex-1 text-center lg:text-left relative z-30">
+              <motion.div
+                style={{ marginTop: textMarginTop }}
               >
-                Buy and sell digital assets
-                <br />
-                with HoneyBadger
-              </h1>
-            </motion.div>
+                <h1
+                  className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
+                  style={{ fontFamily: "SF Pro Display, sans-serif" }}
+                >
+                  Buy and sell digital assets
+                  <br />
+                  with HoneyBadger
+                </h1>
+              </motion.div>
+              
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-20 justify-center lg:justify-start">
+                <a
+                  href="#app"
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
+                  style={{ borderRadius: "50px" }}
+                >
+                  Buy Online
+                </a>
+                <a
+                  href="#find-atm"
+                  className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
+                  style={{
+                    borderRadius: "50px",
+                    background: "rgba(255, 255, 255, 0.05)",
+                  }}
+                >
+                  Find an ATM
+                </a>
+              </div>
+            </div>
 
             {/* Logo on the right */}
             <motion.div
@@ -104,42 +126,33 @@ const ScrollHero: React.FC = () => {
                 style={{ fontFamily: "SF Pro Display, sans-serif" }}
               >
                 Canada's choice for Bitcoin
-                <span className="inline-block ml-4 align-middle w-36 h-36">
-                  <CryptoModel3D
-                    modelPath="/Bitcoin.glb"
-                    className="w-full h-full"
-                    opacity={secondTextOpacity}
-                  />
-                </span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mt-16 max-w-2xl mx-auto leading-relaxed">
                 HoneyBadger makes it easy to buy Bitcoin, Ethereum, and Litecoin
                 online, at an ATM, or by phone.
               </p>
+              
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-12 justify-center">
+                <a
+                  href="#app"
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
+                  style={{ borderRadius: "50px" }}
+                >
+                  Buy Online
+                </a>
+                <a
+                  href="#find-atm"
+                  className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
+                  style={{
+                    borderRadius: "50px",
+                    background: "rgba(255, 255, 255, 0.05)",
+                  }}
+                >
+                  Find an ATM
+                </a>
+              </div>
             </div>
-          </motion.div>
-          {/* Buttons */}
-          <motion.div
-            style={{ marginTop: buttonsMarginTop }}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 lg:px-0 lg:ml-8 relative z-30"
-          >
-            <a
-              href="#app"
-              className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
-              style={{ borderRadius: "50px" }}
-            >
-              Buy Online
-            </a>
-            <a
-              href="#find-atm"
-              className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
-              style={{
-                borderRadius: "50px",
-                background: "rgba(255, 255, 255, 0.05)",
-              }}
-            >
-              Find an ATM
-            </a>
           </motion.div>
         </div>
       </div>
@@ -164,19 +177,19 @@ const ScrollHero: React.FC = () => {
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   60,000+
                 </div>
-                <div className="text-gray-400 text-xs">Verified users</div>
+                <div className="text-gray-400 text-sm">Verified users</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   230+
                 </div>
-                <div className="text-gray-400 text-xs">ATMs across Canada</div>
+                <div className="text-gray-400 text-sm">ATMs across Canada</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   $24M
                 </div>
-                <div className="text-gray-400 text-xs">
+                <div className="text-gray-400 text-sm">
                   Quarterly volume exchanged
                 </div>
               </div>

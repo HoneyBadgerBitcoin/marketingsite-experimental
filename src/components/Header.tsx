@@ -105,7 +105,7 @@ const buyItems = [
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <img src="/logo-white.png" alt="HoneyBadger" className="h-8 lg:h-9 w-auto" />
+              <img src="/logo-white.png" alt="HoneyBadger" className="h-9 lg:h-10 w-auto" />
             </a>
           </div>
 

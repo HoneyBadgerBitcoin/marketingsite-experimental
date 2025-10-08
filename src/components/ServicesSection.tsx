@@ -83,10 +83,10 @@ export default function ServicesSection() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl text-white mb-4">
-            Explore what's possible
+            Three ways to buy Bitcoin
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Choose the perfect way to buy cryptocurrency that fits your needs
+            Choose the perfect option to buy cryptocurrency that fits your needs
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export default function ServicesSection() {
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
               background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-gold.png)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-silver.png)',
               backgroundBlendMode: 'normal, overlay',
               backgroundSize: 'cover',
             }}
@@ -151,27 +151,27 @@ export default function ServicesSection() {
                   Buy at an<br />
                   <span className="relative inline-block">
                     ATM
-                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-amber-400/60"></div>
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-accent-400/60"></div>
                   </span>
                 </h3>
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-gray-300">
-                  <span className="font-semibold text-white">Find a Bitcoin ATM Near You</span> — Find the nearest ATM from our network of 220+ machines.
+                  <span className="font-semibold text-white">Find a Bitcoin ATM Near You</span> — Find the nearest ATM from our network of 230+ machines.
                 </p>
               <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1.5 bg-white/5 text-amber-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
                   Cash purchases
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-amber-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
                   Near you
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-amber-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
                   Quick and easy
                 </span>
               </div>
               <div className="mt-2">
-                <a href="/find-atm" className="inline-flex items-center text-amber-400 hover:text-amber-300 font-medium transition-colors">
+                <a href="/find-atm" className="inline-flex items-center text-accent-400 hover:text-accent-300 font-medium transition-colors">
                   Learn More →
                 </a>
               </div>
@@ -184,7 +184,7 @@ export default function ServicesSection() {
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
               background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-black.png)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-silver.png)',
               backgroundBlendMode: 'normal, overlay',
               backgroundSize: 'cover',
             }}
@@ -195,7 +195,7 @@ export default function ServicesSection() {
                   OTC<br />
                   <span className="relative inline-block">
                     Desk
-                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-emerald-400/60"></div>
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-accent-400/60"></div>
                   </span>
                 </h3>
               </div>
@@ -204,18 +204,18 @@ export default function ServicesSection() {
                   <span className="font-semibold text-white">Personalized Crypto Assistance</span> — Making a large purchase or want dedicated support? Connect with our team for a secure, personalized experience built around you.
                 </p>
               <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1.5 bg-white/5 text-emerald-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
                   1:1 guidance
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-emerald-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
                   Human support
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-emerald-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
                   Secure onboarding
                 </span>
               </div>
               <div className="mt-2">
-                <a href="#" className="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium transition-colors">
+                <a href="#" className="inline-flex items-center text-accent-400 hover:text-accent-300 font-medium transition-colors">
                   Learn More →
                 </a>
               </div>

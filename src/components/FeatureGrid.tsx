@@ -124,7 +124,7 @@ export default function FeatureGrid() {
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
               className="group relative overflow-hidden rounded-3xl transition-all duration-500"
               style={{
-                minHeight: "500px",
+                minHeight: "400px",
                 backgroundColor: feature.gradient,
               }}
             >
@@ -159,7 +159,7 @@ export default function FeatureGrid() {
                   <h3 className="text-lg font-bold text-white leading-snug">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-white/85 leading-relaxed">
+                  <p className="text-base text-white/85 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
