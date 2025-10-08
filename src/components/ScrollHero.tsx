@@ -14,6 +14,14 @@ const ScrollHero: React.FC = () => {
   // Text crossfade: First text starts at 1, fades to 0, second starts at 0, fades to 1
   const firstTextOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   const secondTextOpacity = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
+  
+  // Pointer events: switch between sections based on scroll
+  const firstPointerEvents = useTransform(scrollYProgress, (latest) => 
+    latest < 0.075 ? 'auto' : 'none'
+  );
+  const secondPointerEvents = useTransform(scrollYProgress, (latest) => 
+    latest >= 0.075 ? 'auto' : 'none'
+  );
 
   // ATM capsule transforms: scale down and move up (very fast)
   const capsuleScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.8]);
@@ -58,7 +66,7 @@ const ScrollHero: React.FC = () => {
         <div className="container-custom w-full max-w-7xl">
           {/* First content: "Buy and sell digital assets" */}
           <motion.div
-            style={{ opacity: firstTextOpacity }}
+            style={{ opacity: firstTextOpacity, pointerEvents: firstPointerEvents }}
             initial={{ opacity: 1 }}
             className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 -mt-28"
           >
@@ -116,7 +124,7 @@ const ScrollHero: React.FC = () => {
           <motion.div
             style={{ 
               opacity: secondTextOpacity,
-              pointerEvents: scrollYProgress.get() > 0.1 ? 'auto' : 'none'
+              pointerEvents: secondPointerEvents
             }}
             className="absolute inset-0 flex items-center justify-center"
           >
@@ -177,19 +185,19 @@ const ScrollHero: React.FC = () => {
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   60,000+
                 </div>
-                <div className="text-gray-400 text-sm">Verified users</div>
+                <div className="text-gray-400 text-base">Verified users</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   230+
                 </div>
-                <div className="text-gray-400 text-sm">ATMs across Canada</div>
+                <div className="text-gray-400 text-base">ATMs across Canada</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   $24M
                 </div>
-                <div className="text-gray-400 text-sm">
+                <div className="text-gray-400 text-base">
                   Quarterly volume exchanged
                 </div>
               </div>

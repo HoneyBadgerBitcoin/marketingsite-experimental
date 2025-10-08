@@ -178,7 +178,7 @@ const buyItems = [
             </button>
             <a 
               href="#contact" 
-              className="btn-pill text-base"
+              className="inline-flex items-center gap-2 px-6 py-2 bg-accent-600 text-white hover:bg-accent-700 transition-all duration-300 font-medium text-base rounded-full"
               onMouseEnter={() => setOpenDropdown(null)}
             >
               Sign up

@@ -83,7 +83,7 @@ export default function ServicesSection() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl text-white mb-4">
-            Three ways to buy Bitcoin
+            Three ways to buy
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Choose the perfect option to buy cryptocurrency that fits your needs
