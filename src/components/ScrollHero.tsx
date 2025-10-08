@@ -67,7 +67,9 @@ const ScrollHero: React.FC = () => {
           {/* First content: "Buy and sell digital assets" */}
           <motion.div
             style={{ opacity: firstTextOpacity, pointerEvents: firstPointerEvents }}
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 -mt-28"
           >
             {/* Text content on the left */}
@@ -126,6 +128,7 @@ const ScrollHero: React.FC = () => {
               opacity: secondTextOpacity,
               pointerEvents: secondPointerEvents
             }}
+            initial={{ opacity: 0 }}
             className="absolute inset-0 flex items-center justify-center"
           >
             <div className="relative text-center">
