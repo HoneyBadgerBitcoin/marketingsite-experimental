@@ -55,37 +55,17 @@ const ScrollHero: React.FC = () => {
 
       {/* Main content container with consistent vertical spacing */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex flex-col items-center max-w-[90vw]">
+        <div className="container-custom w-full max-w-7xl">
           {/* First content: "Buy and sell digital assets" */}
           <motion.div
             style={{ opacity: firstTextOpacity }}
             initial={{ opacity: 1 }}
-            className="w-full flex flex-col items-center justify-center -mt-28"
+            className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 -mt-28"
           >
-            {/* ATM Image with pill-shaped container positioned on top */}
-            <motion.div
-              style={{ scale: capsuleScale, y: capsuleY }}
-              className="h-[26rem] w-[16rem] md:h-[32rem] md:w-[20rem] lg:h-[36rem] lg:w-[22.5rem] relative flex-shrink-0 overflow-hidden rounded-full shadow-2xl z-10 mb-0"
-            >
-              {/* Gradient background effects */}
-              <div className="opacity-40">
-                <div className="absolute top-0 h-[70%] w-full bg-blue-600 blur-2xl contrast-125"></div>
-                <div className="absolute bottom-0 h-1/2 w-full bg-yellow-500 blur-2xl contrast-125"></div>
-              </div>
-              {/* Fade out effect for bottom half */}
-              <div className="absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-[#0a1320] via-[#0a1320]/80 to-transparent z-20"></div>
-              {/* ATM Image - positioned to show top half and hide bottom */}
-              <img
-                src="/atm-image.png"
-                alt="Bitcoin ATM"
-                className="absolute top-[15%] left-0 right-0 z-10 mx-auto h-[140%] w-auto object-cover"
-              />
-            </motion.div>
-
-            {/* Text positioned to overlap bottom of image */}
+            {/* Text content on the left */}
             <motion.div
               style={{ marginTop: textMarginTop }}
-              className="text-center relative z-30"
+              className="flex-1 text-center lg:text-left relative z-30"
             >
               <h1
                 className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
@@ -95,6 +75,18 @@ const ScrollHero: React.FC = () => {
                 <br />
                 with HoneyBadger
               </h1>
+            </motion.div>
+
+            {/* Logo on the right */}
+            <motion.div
+              style={{ scale: capsuleScale, y: capsuleY }}
+              className="flex-shrink-0 relative z-10"
+            >
+              <img
+                src="/logo-white-transparent.png"
+                alt="HoneyBadger Logo"
+                className="h-[16rem] md:h-[20rem] lg:h-[24rem] w-auto object-contain"
+              />
             </motion.div>
           </motion.div>
 
@@ -129,7 +121,7 @@ const ScrollHero: React.FC = () => {
           {/* Buttons */}
           <motion.div
             style={{ marginTop: buttonsMarginTop }}
-            className="flex flex-col sm:flex-row gap-4 justify-center px-4 relative z-30"
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 lg:px-0 lg:ml-8 relative z-30"
           >
             <a
               href="#app"
