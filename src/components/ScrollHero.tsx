@@ -188,19 +188,19 @@ const ScrollHero: React.FC = () => {
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   60,000+
                 </div>
-                <div className="text-gray-400 text-base">Verified users</div>
+                <div className="text-gray-300 text-base">Verified users</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   230+
                 </div>
-                <div className="text-gray-400 text-base">ATMs across Canada</div>
+                <div className="text-gray-300 text-base">ATMs across Canada</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   $24M
                 </div>
-                <div className="text-gray-400 text-base">
+                <div className="text-gray-300 text-base">
                   Quarterly volume exchanged
                 </div>
               </div>

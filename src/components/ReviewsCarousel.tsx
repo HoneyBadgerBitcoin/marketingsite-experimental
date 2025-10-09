@@ -146,7 +146,7 @@ export default function ReviewsCarousel() {
           <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">
             Don't take our word for it
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Read what customers have to say about HoneyBadger.
           </p>
         </motion.div>
