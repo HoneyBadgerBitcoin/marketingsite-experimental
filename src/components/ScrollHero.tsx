@@ -1,9 +1,22 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useMotionValue, useMotionValueEvent } from "framer-motion";
 import CryptoModel3D from "./CryptoModel3D";
 
 const ScrollHero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const [animationsComplete, setAnimationsComplete] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  // Mark as mounted after initial render
+  useEffect(() => {
+    setIsMounted(true);
+    // Mark animations as complete after they finish (reduced to 700ms)
+    const timer = setTimeout(() => {
+      setAnimationsComplete(true);
+    }, 700); // Complete after first content animation (0.1s delay + 0.5s duration + 0.1s buffer)
+    return () => clearTimeout(timer);
+  }, []);
 
   // Track scroll progress through the hero section
   const { scrollYProgress } = useScroll({
@@ -14,6 +27,14 @@ const ScrollHero: React.FC = () => {
   // Text crossfade: First text starts at 1, fades to 0, second starts at 0, fades to 1
   const firstTextOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
   const secondTextOpacity = useTransform(scrollYProgress, [0.03, 0.08], [0, 1]);
+  
+  // Track when user starts scrolling - immediately switch to scroll control
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > 0 && !hasScrolled) {
+      setHasScrolled(true);
+      setAnimationsComplete(true); // Immediately enable scroll control
+    }
+  });
   
   // Pointer events: switch between sections based on scroll
   const firstPointerEvents = useTransform(scrollYProgress, (latest) => 
@@ -66,7 +87,10 @@ const ScrollHero: React.FC = () => {
         <div className="container-custom w-full max-w-7xl">
           {/* First content: "Buy and sell digital assets" */}
           <motion.div
-            style={{ opacity: firstTextOpacity, pointerEvents: firstPointerEvents }}
+            style={{ 
+              opacity: animationsComplete ? firstTextOpacity : undefined,
+              pointerEvents: firstPointerEvents 
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -125,10 +149,9 @@ const ScrollHero: React.FC = () => {
           {/* Second content: "Canada's choice for Bitcoin" */}
           <motion.div
             style={{ 
-              opacity: secondTextOpacity,
+              opacity: animationsComplete ? secondTextOpacity : 0,
               pointerEvents: secondPointerEvents
             }}
-            initial={{ opacity: 0 }}
             className="absolute inset-0 flex items-center justify-center"
           >
             <div className="relative text-center">
@@ -169,11 +192,11 @@ const ScrollHero: React.FC = () => {
       </div>
       {/* Stats and Logo Banner - Always visible at bottom */}
       <motion.div
-        style={{ y: statsY }}
+        style={{ y: animationsComplete ? statsY : undefined }}
         className="absolute bottom-4 left-0 right-0 py-4 px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
       >
         <div className="max-w-7xl mx-auto">
           {/* Subtle divider line */}

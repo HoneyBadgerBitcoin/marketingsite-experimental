@@ -103,7 +103,7 @@ export default function ServicesSection() {
           >
             <div className="relative z-10 flex gap-8">
               <div className="flex items-center relative min-w-[200px] p-4">
-                <h3 className="text-3xl font-bold text-white whitespace-nowrap">
+                <h3 className="text-3xl font-bold text-white whitespace-nowrap" style={{ minWidth: '140px' }}>
                   Buy<br />
                   <span className="relative inline-block">
                     Online
@@ -147,7 +147,7 @@ export default function ServicesSection() {
           >
             <div className="relative z-10 flex gap-8">
               <div className="flex items-center relative min-w-[200px] p-4">
-                <h3 className="text-3xl font-bold text-white whitespace-nowrap">
+                <h3 className="text-3xl font-bold text-white whitespace-nowrap" style={{ minWidth: '180px' }}>
                   Buy at an<br />
                   <span className="relative inline-block">
                     ATM
@@ -191,7 +191,7 @@ export default function ServicesSection() {
           >
             <div className="relative z-10 flex gap-8">
               <div className="flex items-center relative min-w-[200px] p-4">
-                <h3 className="text-3xl font-bold text-white whitespace-nowrap">
+                <h3 className="text-3xl font-bold text-white whitespace-nowrap" style={{ minWidth: '100px' }}>
                   OTC<br />
                   <span className="relative inline-block">
                     Desk

@@ -17,12 +17,36 @@ const { title, description = "Canada's trusted platform for buying and selling d
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-white">
+  <body class="min-h-screen bg-white fonts-loading">
     <slot />
     <Analytics client:load />
     <SpeedInsights />
+    
+    <script>
+      // Detect when fonts are loaded to prevent layout shift
+      if ('fonts' in document) {
+        Promise.all([
+          document.fonts.load('400 1em "Fjalla One"'),
+          document.fonts.load('400 1em "Poppins"')
+        ]).then(() => {
+          document.body.classList.remove('fonts-loading');
+          document.body.classList.add('fonts-loaded');
+        }).catch(() => {
+          // If fonts fail to load, remove loading class anyway
+          document.body.classList.remove('fonts-loading');
+        });
+      } else {
+        // Fallback for browsers without Font Loading API
+        document.body.classList.remove('fonts-loading');
+      }
+    </script>
   </body>
 </html>
 

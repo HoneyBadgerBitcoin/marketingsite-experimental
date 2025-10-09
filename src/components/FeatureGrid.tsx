@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
 
 interface Feature {
   id: string;
@@ -50,12 +49,43 @@ const features: Feature[] = [
 ];
 
 export default function FeatureGrid() {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, {
-    once: true,
-    margin: "-100px 0px",
-    threshold: 0.1,
-  });
+  const containerRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  // Preload images to prevent blinking
+  useEffect(() => {
+    features.forEach((feature) => {
+      const img = new Image();
+      img.src = feature.image;
+    });
+  }, []);
+  
+  // Use native Intersection Observer for better reliability
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px',
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [isVisible]);
 
   return (
     <section
@@ -91,41 +121,44 @@ export default function FeatureGrid() {
       <div className="container-custom relative z-10">
         {/* Title Section */}
         <div className="text-center mb-24 pt-12">
-          <motion.h2
-            className="text-4xl md:text-5xl font-medium text-white mb-8 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+          <h2
+            className="text-4xl md:text-5xl font-medium text-white mb-8 leading-tight transition-all duration-600 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            }}
           >
             Canada's{" "}
             <span className="bg-gradient-to-r from-[#7fa1ff] via-white to-[#7fa1ff] bg-clip-text text-transparent">
               #1 noncustodial
             </span>{" "}
             digital asset platform
-          </motion.h2>
-          <motion.p
-            className="text-xl text-white/80 max-w-3xl mx-auto px-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          </h2>
+          <p
+            className="text-xl text-white/80 max-w-3xl mx-auto px-6 transition-all duration-600 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '100ms',
+            }}
           >
             Unlike traditional exchanges, we never hold your funds. Your
             transfer goes directly to you, reducing risks and maximizing security.
-          </motion.p>
+          </p>
         </div>
 
         {/* 2x2 Feature Grid */}
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={feature.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl transition-all duration-500"
+              className="group relative overflow-hidden rounded-3xl transition-all duration-600 ease-out"
               style={{
                 minHeight: "400px",
                 backgroundColor: feature.gradient,
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                transitionDelay: `${100 + index * 100}ms`,
               }}
             >
               {/* Background Image with Gradient Mask */}
@@ -135,6 +168,9 @@ export default function FeatureGrid() {
                     src={feature.image}
                     alt={feature.title}
                     className="w-full h-full object-cover"
+                    loading="eager"
+                    decoding="async"
+                    style={{ display: 'block' }}
                   />
                   {/* Subtle Gradient Mask Overlay */}
                   <div
@@ -164,7 +200,7 @@ export default function FeatureGrid() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

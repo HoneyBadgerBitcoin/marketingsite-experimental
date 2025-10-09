@@ -1,8 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Fjalla+One&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+/* Load fonts with block to prevent layout shift */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Fjalla+One&family=Rubik:wght@300;400;500;600;700;800;900&display=block");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fallback font to match Fjalla One metrics */
+@font-face {
+  font-family: 'Fjalla One Fallback';
+  src: local('Arial Narrow'), local('Arial');
+  size-adjust: 95%;
+  ascent-override: 100%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
+/* Fallback font to match Poppins metrics */
+@font-face {
+  font-family: 'Poppins Fallback';
+  src: local('system-ui'), local('sans-serif');
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
 
 /* Gulams Condensed Font Face Definitions */
 @font-face {
@@ -296,6 +317,35 @@
 }
 
 @layer base {
+    /* Prevent font-loading layout shift */
+    body {
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Hide text briefly while fonts load to prevent FOUT */
+    body.fonts-loading .font-heading,
+    body.fonts-loading h1,
+    body.fonts-loading h2,
+    body.fonts-loading h3,
+    body.fonts-loading h4,
+    body.fonts-loading h5,
+    body.fonts-loading h6 {
+        visibility: hidden;
+    }
+    
+    body.fonts-loaded .font-heading,
+    body.fonts-loaded h1,
+    body.fonts-loaded h2,
+    body.fonts-loaded h3,
+    body.fonts-loaded h4,
+    body.fonts-loaded h5,
+    body.fonts-loaded h6 {
+        visibility: visible;
+    }
+    
     /* Add subtle rounded corners to specific elements for a softer look */
     div,
     article,

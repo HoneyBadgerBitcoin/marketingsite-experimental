@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["Fjalla One", "sans-serif"],
+        heading: ["Fjalla One", "Fjalla One Fallback", "Arial Narrow", "Arial", "sans-serif"],
         gulams: ["Gulams Condensed", "sans-serif"],
         balinese: ["Balinese Culture", "sans-serif"],
         condensed: ["Condensed Neue Soft", "sans-serif"],
@@ -17,8 +17,8 @@ export default {
         neohead: ["Neohead", "sans-serif"],
         bondia: ["Bondia", "sans-serif"],
         rubik: ["Rubik", "sans-serif"],
-        body: ["Poppins", "system-ui", "sans-serif"],
-        sans: ["Poppins", "system-ui", "sans-serif"],
+        body: ["Poppins", "Poppins Fallback", "system-ui", "sans-serif"],
+        sans: ["Poppins", "Poppins Fallback", "system-ui", "sans-serif"],
       },
       colors: {
         primary: {
