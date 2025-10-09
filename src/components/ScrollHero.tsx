@@ -173,7 +173,6 @@ const ScrollHero: React.FC = () => {
                   <source src="/bitcoin-btc-coin-eth-optimized.mp4" type="video/mp4" />
                 </video>
               </div>
-              </div>
 
               {/* Content */}
               <div className="relative z-10">
