@@ -112,7 +112,7 @@ export default function ServicesSection() {
                 </h3>
               </div>
               <div className="flex flex-col gap-4">
-                <p className="text-gray-300">
+                <p className="text-white">
                   <span className="font-semibold text-white">Buy Bitcoin & Crypto Online</span> — HB gives you secure online access to digital assets. No clutter, no confusion.
                 </p>
               <div className="flex flex-wrap gap-3">
@@ -156,7 +156,7 @@ export default function ServicesSection() {
                 </h3>
               </div>
               <div className="flex flex-col gap-4">
-                <p className="text-gray-300">
+                <p className="text-white">
                   <span className="font-semibold text-white">Find a Bitcoin ATM Near You</span> — Find the nearest ATM from our network of 230+ machines.
                 </p>
               <div className="flex flex-wrap gap-3">
@@ -200,7 +200,7 @@ export default function ServicesSection() {
                 </h3>
               </div>
               <div className="flex flex-col gap-4">
-                <p className="text-gray-300">
+                <p className="text-white">
                   <span className="font-semibold text-white">Personalized Crypto Assistance</span> — Making a large purchase or want dedicated support? Connect with our team for a secure, personalized experience built around you.
                 </p>
               <div className="flex flex-wrap gap-3">
