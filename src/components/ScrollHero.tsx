@@ -169,11 +169,10 @@ const ScrollHero: React.FC = () => {
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover"
                 >
-                  <source
-                    src="/bitcoin-btc-coin-and-ethereum-eth-coins-with-gold-2025-08-29-10-38-06-utc.mov"
-                    type="video/mp4"
-                  />
+                  <source src="/bitcoin-btc-coin-eth-optimized.webm" type="video/webm" />
+                  <source src="/bitcoin-btc-coin-eth-optimized.mp4" type="video/mp4" />
                 </video>
+              </div>
               </div>
 
               {/* Content */}
