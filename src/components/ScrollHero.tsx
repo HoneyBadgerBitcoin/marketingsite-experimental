@@ -12,33 +12,33 @@ const ScrollHero: React.FC = () => {
   });
 
   // Text crossfade: First text starts at 1, fades to 0, second starts at 0, fades to 1
-  const firstTextOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
-  const secondTextOpacity = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
+  const firstTextOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const secondTextOpacity = useTransform(scrollYProgress, [0.03, 0.08], [0, 1]);
   
   // Pointer events: switch between sections based on scroll
   const firstPointerEvents = useTransform(scrollYProgress, (latest) => 
-    latest < 0.075 ? 'auto' : 'none'
+    latest < 0.04 ? 'auto' : 'none'
   );
   const secondPointerEvents = useTransform(scrollYProgress, (latest) => 
-    latest >= 0.075 ? 'auto' : 'none'
+    latest >= 0.04 ? 'auto' : 'none'
   );
 
-  // ATM capsule transforms: scale down and move up (very fast)
-  const capsuleScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.8]);
-  const capsuleY = useTransform(scrollYProgress, [0, 0.1], [0, -60]);
+  // Logo transforms: scale down and move up (faster)
+  const capsuleScale = useTransform(scrollYProgress, [0, 0.05], [1, 0.8]);
+  const capsuleY = useTransform(scrollYProgress, [0, 0.05], [0, -60]);
 
-  // Text overlap with capsule: increase negative margin to condense (very fast)
+  // Text overlap with capsule: increase negative margin to condense (faster)
   const textMarginTop = useTransform(
     scrollYProgress,
-    [0, 0.15],
+    [0, 0.08],
     [0, 0] // keep text position fixed
   );
 
   // Buttons: only reduce top margin, don't move them up
-  const buttonsMarginTop = useTransform(scrollYProgress, [0, 0.1], [16, 8]);
+  const buttonsMarginTop = useTransform(scrollYProgress, [0, 0.05], [16, 8]);
 
-  // Stats/logos section: move up to close gap with buttons (reduced to prevent overlap)
-  const statsY = useTransform(scrollYProgress, [0, 0.1], [0, -100]);
+  // Stats/logos section: move up to close gap with buttons (faster)
+  const statsY = useTransform(scrollYProgress, [0, 0.05], [0, -100]);
 
   return (
     <motion.div
