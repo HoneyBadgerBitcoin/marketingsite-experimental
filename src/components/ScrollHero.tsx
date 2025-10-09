@@ -1,5 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, useMotionValue, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useMotionValueEvent,
+} from "framer-motion";
 import CryptoModel3D from "./CryptoModel3D";
 
 const ScrollHero: React.FC = () => {
@@ -27,7 +33,7 @@ const ScrollHero: React.FC = () => {
   // Text crossfade: First text starts at 1, fades to 0, second starts at 0, fades to 1
   const firstTextOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
   const secondTextOpacity = useTransform(scrollYProgress, [0.03, 0.08], [0, 1]);
-  
+
   // Track when user starts scrolling - immediately switch to scroll control
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (latest > 0 && !hasScrolled) {
@@ -35,13 +41,13 @@ const ScrollHero: React.FC = () => {
       setAnimationsComplete(true); // Immediately enable scroll control
     }
   });
-  
+
   // Pointer events: switch between sections based on scroll
-  const firstPointerEvents = useTransform(scrollYProgress, (latest) => 
-    latest < 0.04 ? 'auto' : 'none'
+  const firstPointerEvents = useTransform(scrollYProgress, (latest) =>
+    latest < 0.04 ? "auto" : "none",
   );
-  const secondPointerEvents = useTransform(scrollYProgress, (latest) => 
-    latest >= 0.04 ? 'auto' : 'none'
+  const secondPointerEvents = useTransform(scrollYProgress, (latest) =>
+    latest >= 0.04 ? "auto" : "none",
   );
 
   // Logo transforms: scale down and move up (faster)
@@ -52,7 +58,7 @@ const ScrollHero: React.FC = () => {
   const textMarginTop = useTransform(
     scrollYProgress,
     [0, 0.08],
-    [0, 0] // keep text position fixed
+    [0, 0], // keep text position fixed
   );
 
   // Buttons: only reduce top margin, don't move them up
@@ -87,9 +93,9 @@ const ScrollHero: React.FC = () => {
         <div className="container-custom w-full max-w-7xl">
           {/* First content: "Buy and sell digital assets" */}
           <motion.div
-            style={{ 
+            style={{
               opacity: animationsComplete ? firstTextOpacity : undefined,
-              pointerEvents: firstPointerEvents 
+              pointerEvents: firstPointerEvents,
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -98,9 +104,7 @@ const ScrollHero: React.FC = () => {
           >
             {/* Text content on the left */}
             <div className="flex-1 text-center lg:text-left relative z-30">
-              <motion.div
-                style={{ marginTop: textMarginTop }}
-              >
+              <motion.div style={{ marginTop: textMarginTop }}>
                 <h1
                   className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
                   style={{ fontFamily: "SF Pro Display, sans-serif" }}
@@ -110,7 +114,7 @@ const ScrollHero: React.FC = () => {
                   with HoneyBadger
                 </h1>
               </motion.div>
-              
+
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-20 justify-center lg:justify-start">
                 <a
@@ -148,43 +152,63 @@ const ScrollHero: React.FC = () => {
 
           {/* Second content: "Canada's choice for Bitcoin" */}
           <motion.div
-            style={{ 
+            style={{
               opacity: animationsComplete ? secondTextOpacity : 0,
-              pointerEvents: secondPointerEvents
+              pointerEvents: secondPointerEvents,
             }}
             className="absolute inset-0 flex items-center justify-center"
           >
-            <div className="relative text-center">
-              <h1
-                className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-                style={{ fontFamily: "SF Pro Display, sans-serif" }}
-              >
-                Canada's choice for Bitcoin
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 mt-16 max-w-2xl mx-auto leading-relaxed">
-                HoneyBadger makes it easy to buy Bitcoin, Ethereum, and Litecoin
-                online, at an ATM, or by phone.
-              </p>
-              
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-12 justify-center">
-                <a
-                  href="#app"
-                  className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
-                  style={{ borderRadius: "50px" }}
+            {/* Content container with background */}
+            <div className="relative text-center max-w-6xl mx-auto px-16 py-20 md:px-28 md:py-28 lg:px-40 lg:py-32">
+              {/* Background video overlay - contained to content */}
+              <div className="absolute inset-0 rounded-2xl overflow-hidden opacity-20">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
                 >
-                  Buy Online
-                </a>
-                <a
-                  href="#find-atm"
-                  className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
-                  style={{
-                    borderRadius: "50px",
-                    background: "rgba(255, 255, 255, 0.05)",
-                  }}
+                  <source
+                    src="/bitcoin-btc-coin-and-ethereum-eth-coins-with-gold-2025-08-29-10-38-06-utc.mov"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <h1
+                  className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
+                  style={{ fontFamily: "SF Pro Display, sans-serif" }}
                 >
-                  Find an ATM
-                </a>
+                  Canada's choice for Bitcoin
+                </h1>
+                <p className="text-lg md:text-xl text-gray-300 mt-16 max-w-2xl mx-auto leading-relaxed">
+                  HoneyBadger makes it easy to buy Bitcoin, Ethereum, and
+                  Litecoin online, at an ATM, or by phone.
+                </p>
+
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 mt-12 justify-center">
+                  <a
+                    href="#app"
+                    className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
+                    style={{ borderRadius: "50px" }}
+                  >
+                    Buy Online
+                  </a>
+                  <a
+                    href="#find-atm"
+                    className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
+                    style={{
+                      borderRadius: "50px",
+                      background: "rgba(255, 255, 255, 0.05)",
+                    }}
+                  >
+                    Find an ATM
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -217,7 +241,9 @@ const ScrollHero: React.FC = () => {
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
                   230+
                 </div>
-                <div className="text-gray-300 text-base">ATMs across Canada</div>
+                <div className="text-gray-300 text-base">
+                  ATMs across Canada
+                </div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-xl md:text-2xl font-bold text-white opacity-70">
