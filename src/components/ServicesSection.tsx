@@ -95,10 +95,10 @@ export default function ServicesSection() {
           <div 
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
-              background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(10, 19, 32, 0.75) 50%, rgba(59, 130, 246, 0.05) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(10, 19, 32, 0.75) 50%, rgba(59, 130, 246, 0.05) 100%), url(/background-silver.png)',
-              backgroundBlendMode: 'normal, overlay',
-              backgroundSize: 'cover',
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-silver.png), linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0.03) 100%)',
+              backgroundBlendMode: 'normal, overlay, normal',
+              backgroundSize: 'cover, cover, cover',
             }}
           >
             <div className="relative z-10 flex gap-8">
@@ -113,7 +113,7 @@ export default function ServicesSection() {
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-white">
-                  <span className="font-semibold text-white">Buy Bitcoin & Crypto Online</span> — HB gives you secure online access to digital assets. No clutter, no confusion.
+                  <span className="font-semibold text-white">Buy Bitcoin & Crypto Online</span> — HB gives you secure online access to digital assets. No clutter, no confusion. Trade with confidence using our intuitive platform designed for both beginners and experienced users.
                 </p>
               <div className="flex flex-wrap gap-3">
                 <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
@@ -139,10 +139,10 @@ export default function ServicesSection() {
           <div 
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
-              background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.1) 0%, rgba(10, 19, 32, 0.75) 50%, rgba(251, 146, 60, 0.05) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(251, 146, 60, 0.1) 0%, rgba(10, 19, 32, 0.75) 50%, rgba(251, 146, 60, 0.05) 100%), url(/background-silver.png)',
-              backgroundBlendMode: 'normal, overlay',
-              backgroundSize: 'cover',
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-silver.png), linear-gradient(135deg, rgba(251, 146, 60, 0.06) 0%, rgba(251, 146, 60, 0.03) 100%)',
+              backgroundBlendMode: 'normal, overlay, normal',
+              backgroundSize: 'cover, cover, cover',
             }}
           >
             <div className="relative z-10 flex gap-8">
@@ -157,21 +157,21 @@ export default function ServicesSection() {
               </div>
               <div className="flex flex-col gap-4">
                 <p className="text-white">
-                  <span className="font-semibold text-white">Find a Bitcoin ATM Near You</span> — Find the nearest ATM from our network of 230+ machines.
+                  <span className="font-semibold text-white">Find a Bitcoin ATM Near You</span> — Find the nearest ATM from our network of 230+ machines. Purchase Bitcoin instantly with cash at convenient locations across Canada for immediate transactions.
                 </p>
               <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-orange-300 text-sm font-medium rounded-md border border-white/10">
                   Cash purchases
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-orange-300 text-sm font-medium rounded-md border border-white/10">
                   Near you
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-orange-300 text-sm font-medium rounded-md border border-white/10">
                   Quick and easy
                 </span>
               </div>
               <div className="mt-2">
-                <a href="/find-atm" className="inline-flex items-center text-accent-400 hover:text-accent-300 font-medium transition-colors">
+                <a href="/find-atm" className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium transition-colors">
                   Learn More →
                 </a>
               </div>
@@ -183,10 +183,10 @@ export default function ServicesSection() {
           <div 
             className="relative p-8 rounded-xl border border-white/[0.03] hover:border-white/[0.08] transition-all duration-300 overflow-hidden group"
             style={{
-              background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(10, 19, 32, 0.75) 50%, rgba(34, 197, 94, 0.05) 100%)',
-              backgroundImage: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(10, 19, 32, 0.75) 50%, rgba(34, 197, 94, 0.05) 100%), url(/background-silver.png)',
-              backgroundBlendMode: 'normal, overlay',
-              backgroundSize: 'cover',
+              background: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%)',
+              backgroundImage: 'linear-gradient(135deg, rgba(10, 19, 32, 0.75) 0%, rgba(15, 25, 40, 0.75) 50%, rgba(10, 19, 32, 0.75) 100%), url(/background-silver.png), linear-gradient(135deg, rgba(34, 197, 94, 0.06) 0%, rgba(34, 197, 94, 0.03) 100%)',
+              backgroundBlendMode: 'normal, overlay, normal',
+              backgroundSize: 'cover, cover, cover',
             }}
           >
             <div className="relative z-10 flex gap-8">
@@ -204,18 +204,18 @@ export default function ServicesSection() {
                   <span className="font-semibold text-white">Personalized Crypto Assistance</span> — Making a large purchase or want dedicated support? Connect with our team for a secure, personalized experience built around you.
                 </p>
               <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-green-300 text-sm font-medium rounded-md border border-white/10">
                   1:1 guidance
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-green-300 text-sm font-medium rounded-md border border-white/10">
                   Human support
                 </span>
-                <span className="px-3 py-1.5 bg-white/5 text-accent-300 text-sm font-medium rounded-md border border-white/10">
+                <span className="px-3 py-1.5 bg-white/5 text-green-300 text-sm font-medium rounded-md border border-white/10">
                   Secure onboarding
                 </span>
               </div>
               <div className="mt-2">
-                <a href="#" className="inline-flex items-center text-accent-400 hover:text-accent-300 font-medium transition-colors">
+                <a href="#" className="inline-flex items-center text-green-400 hover:text-green-300 font-medium transition-colors">
                   Learn More →
                 </a>
               </div>

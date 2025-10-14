@@ -50,9 +50,6 @@ const ScrollHero: React.FC = () => {
     latest >= 0.04 ? "auto" : "none",
   );
 
-  // Logo transforms: scale down and move up (faster)
-  const capsuleScale = useTransform(scrollYProgress, [0, 0.05], [1, 0.8]);
-  const capsuleY = useTransform(scrollYProgress, [0, 0.05], [0, -60]);
 
   // Text overlap with capsule: increase negative margin to condense (faster)
   const textMarginTop = useTransform(
@@ -70,7 +67,7 @@ const ScrollHero: React.FC = () => {
   return (
     <motion.div
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center bg-[#0a1320] overflow-hidden !rounded-none"
+      className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden !rounded-none"
     >
       {/* Background pattern overlay */}
       <div className="absolute inset-0 opacity-10">
@@ -100,54 +97,65 @@ const ScrollHero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 -mt-28"
+            className="w-full relative -mt-28"
           >
-            {/* Text content on the left */}
-            <div className="flex-1 text-center lg:text-left relative z-30">
-              <motion.div style={{ marginTop: textMarginTop }}>
-                <h1
-                  className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-                  style={{ fontFamily: "SF Pro Display, sans-serif" }}
+            {/* Video background at the top */}
+            <div className="flex justify-center w-full">
+              <div className="relative w-full max-w-5xl h-[50vh] max-h-[500px] overflow-hidden rounded-2xl">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-contain"
                 >
-                  Buy and sell digital assets
-                  <br />
-                  with HoneyBadger
-                </h1>
-              </motion.div>
-
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-20 justify-center lg:justify-start">
-                <a
-                  href="#app"
-                  className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
-                  style={{ borderRadius: "50px" }}
-                >
-                  Buy Online
-                </a>
-                <a
-                  href="#find-atm"
-                  className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
-                  style={{
-                    borderRadius: "50px",
-                    background: "rgba(255, 255, 255, 0.05)",
-                  }}
-                >
-                  Find an ATM
-                </a>
+                  <source src="/hero-rotating-gold-bars.mp4" type="video/mp4" />
+                </video>
+                
+                {/* Dark gradient overlay at bottom for text overlap */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
               </div>
             </div>
 
-            {/* Logo on the right */}
-            <motion.div
-              style={{ scale: capsuleScale, y: capsuleY }}
-              className="flex-shrink-0 relative z-10"
-            >
-              <img
-                src="/logo-white-transparent.png"
-                alt="HoneyBadger Logo"
-                className="h-[16rem] md:h-[20rem] lg:h-[24rem] w-auto object-contain"
-              />
-            </motion.div>
+            {/* Text content overlapping bottom of video */}
+            <div className="relative -mt-20 z-20 flex justify-center">
+              <div className="text-center max-w-5xl px-8 pb-8">
+                {/* Text content centered */}
+                <div className="relative z-30">
+                  <motion.div style={{ marginTop: textMarginTop }}>
+                    <h1
+                      className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight drop-shadow-lg"
+                      style={{ fontFamily: "SF Pro Display, sans-serif" }}
+                    >
+                      Buy and sell digital assets
+                      <br />
+                      with HoneyBadger
+                    </h1>
+                  </motion.div>
+
+                  {/* Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 mt-20 justify-center">
+                    <a
+                      href="#app"
+                      className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
+                      style={{ borderRadius: "50px" }}
+                    >
+                      Buy Online
+                    </a>
+                    <a
+                      href="#find-atm"
+                      className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
+                      style={{
+                        borderRadius: "50px",
+                        background: "rgba(255, 255, 255, 0.05)",
+                      }}
+                    >
+                      Find an ATM
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           {/* Second content: "Canada's choice for Bitcoin" */}
@@ -158,54 +166,62 @@ const ScrollHero: React.FC = () => {
             }}
             className="absolute inset-0 flex items-center justify-center"
           >
-            {/* Content container with background */}
-            <div className="relative text-center max-w-6xl mx-auto px-16 py-20 md:px-28 md:py-28 lg:px-40 lg:py-32">
-              {/* Background video overlay - contained to content */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden opacity-20">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src="/bitcoin-btc-coin-eth-optimized.webm" type="video/webm" />
-                  <source src="/bitcoin-btc-coin-eth-optimized.mp4" type="video/mp4" />
-                </video>
+            <div className="w-full relative -mt-28">
+              {/* Video background at the top */}
+              <div className="flex justify-center w-full">
+                <div className="relative w-full max-w-5xl h-[50vh] max-h-[500px] overflow-hidden rounded-2xl">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-contain"
+                  >
+                    <source src="/hero-rotating-coins.mp4" type="video/mp4" />
+                  </video>
+                  
+                  {/* Dark gradient overlay at bottom for text overlap */}
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+                </div>
               </div>
 
-              {/* Content */}
-              <div className="relative z-10">
-                <h1
-                  className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight"
-                  style={{ fontFamily: "SF Pro Display, sans-serif" }}
-                >
-                  Canada's choice for Bitcoin
-                </h1>
-                <p className="text-lg md:text-xl text-gray-300 mt-16 max-w-2xl mx-auto leading-relaxed">
-                  HoneyBadger makes it easy to buy Bitcoin, Ethereum, and
-                  Litecoin online, at an ATM, or by phone.
-                </p>
+              {/* Text content overlapping bottom of video */}
+              <div className="relative -mt-20 z-20 flex justify-center">
+                <div className="text-center max-w-5xl px-8 pb-8">
+                  {/* Text content centered */}
+                  <div className="relative z-30">
+                    <h1
+                      className="text-3xl md:text-5xl lg:text-[4.5rem] font-normal text-white leading-tight drop-shadow-lg"
+                      style={{ fontFamily: "SF Pro Display, sans-serif" }}
+                    >
+                      Canada's choice for Bitcoin
+                    </h1>
+                    <p className="text-lg md:text-xl text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                      HoneyBadger makes it easy to buy Bitcoin, Ethereum, and
+                      Litecoin online, at an ATM, or by phone.
+                    </p>
 
-                {/* Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mt-12 justify-center">
-                  <a
-                    href="#app"
-                    className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
-                    style={{ borderRadius: "50px" }}
-                  >
-                    Buy Online
-                  </a>
-                  <a
-                    href="#find-atm"
-                    className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
-                    style={{
-                      borderRadius: "50px",
-                      background: "rgba(255, 255, 255, 0.05)",
-                    }}
-                  >
-                    Find an ATM
-                  </a>
+                    {/* Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 mt-12 justify-center">
+                      <a
+                        href="#app"
+                        className="inline-flex items-center gap-2 px-6 py-2 bg-gray-200 text-gray-900 font-medium min-w-[140px] justify-center hover:bg-white transition-all duration-300 cursor-pointer"
+                        style={{ borderRadius: "50px" }}
+                      >
+                        Buy Online
+                      </a>
+                      <a
+                        href="#find-atm"
+                        className="inline-flex items-center gap-2 px-6 py-2 border-2 border-white/30 text-white font-medium min-w-[140px] justify-center backdrop-blur-sm hover:border-white/50 transition-all duration-300"
+                        style={{
+                          borderRadius: "50px",
+                          background: "rgba(255, 255, 255, 0.05)",
+                        }}
+                      >
+                        Find an ATM
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
