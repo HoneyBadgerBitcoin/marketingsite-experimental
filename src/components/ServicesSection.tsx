@@ -107,7 +107,7 @@ export default function ServicesSection() {
                   Buy<br />
                   <span className="relative inline-block">
                     Online
-                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-accent-400/60"></div>
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-blue-400/60"></div>
                   </span>
                 </h3>
               </div>
@@ -151,7 +151,7 @@ export default function ServicesSection() {
                   Buy at an<br />
                   <span className="relative inline-block">
                     ATM
-                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-accent-400/60"></div>
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-orange-400/60"></div>
                   </span>
                 </h3>
               </div>
@@ -195,7 +195,7 @@ export default function ServicesSection() {
                   OTC<br />
                   <span className="relative inline-block">
                     Desk
-                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-accent-400/60"></div>
+                    <div className="absolute left-0 -bottom-2 w-full h-1 bg-green-400/60"></div>
                   </span>
                 </h3>
               </div>
