@@ -113,7 +113,7 @@ const ScrollHero: React.FC = () => {
                 </video>
                 
                 {/* Dark gradient overlay at bottom for text overlap */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/90 to-transparent z-10"></div>
               </div>
             </div>
 
@@ -181,7 +181,7 @@ const ScrollHero: React.FC = () => {
                   </video>
                   
                   {/* Dark gradient overlay at bottom for text overlap */}
-                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/90 to-transparent z-10"></div>
                 </div>
               </div>
 
